@@ -86,7 +86,7 @@
 
 - We usually use an Object to break down the frequency in KEY-VALEU Pair
 
-- Frequency Counter - Anagram Challange
+- FREQUENCY COUNTER - ANAGRAM CHALLANGE
 
   - QUESTION
 
@@ -138,3 +138,12 @@
     console.log(validAnagram("qwerty", "qeywrt"), true); // true
     console.log(validAnagram("texttwisttime", "timetwisttext"), true); // true
   ```
+
+  - Note - String can be accessed using INDEX as well. So instead of using `str.split()`,
+    I could have simply use
+
+    ```
+    for(let i=0; i < str1.length; i++) {
+        let str = str1[i]
+    }
+    ```
