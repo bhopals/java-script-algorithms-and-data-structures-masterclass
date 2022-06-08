@@ -160,8 +160,96 @@
 
   - LOOK BACK AND REFACTOR
 
-- All the above mentioned problem solving strategies are adapted from `Geroge Polya`, whose book `How To Solve It` is
+    - Congrats on Solving it, but you are not DONE!
+    - Try and Improve your code
+    - Look back and reflect on it
+    - Look at individual code blocks
+
+    - REFACTORING QUESTIONS
+
+      - Can you check the result?
+      - Can you derive the result differently?
+      - Can you understand it at a glance?
+      - Can you use the result or method for some other problem?
+      - Can you improve the performance of your solution? (Time and Space Complexity)
+      - Can you think of other ways to refactor?
+      - How have otehr people solved this problem?
+
+    - EXAMPLE
+
+      - QUESTION - Write a function which takes in a string and returns counts of each character in the string.
+      - ANSWER
+
+        - INITIAL VERSION
+
+        ```
+          function charCount(str) {
+            var obj = {};
+            for(var i = 0; i< str.length; i++) {
+              var char = str[i].toLowerCase();
+              if(/[a-z0-9]/.test(char)) {
+                if(obj[char] > 0) {
+                  obj[char]++;
+                } else {
+                  obj[char] = 1;
+              }
+            }
+            return obj;
+          }
+        ```
+
+        - REFACTORED VERSION
+
+          - SAMPLE 1 - (With Regex)
+
+          ```
+            function charCount(str) {
+              var obj = {};
+              for(var char of str) {
+                char = char.toLowerCase();
+                if(/[a-z0-9]/.test(char)) {
+                  obj[char] = ++obj[char] || 1;
+                }
+              }
+              return obj;
+            }
+          ```
+
+          - SAMPLE 2 (More Performant since regular expressions are slower)
+
+          ```
+            function charCount(str) {
+              var obj = {};
+              str = str.toLowerCase();
+              for(var char of str) {
+                if(isAlphaNumeric(char)) {
+                  obj[char] = ++obj[char] || 1;
+                }
+              }
+              return obj;
+            }
+
+            function isAlphaNumeric(char) {
+              var code = charCodeAt(0);
+              if(!(code > 47 && code < 58) && // numeric (0-9)
+              !(code > 64 && code < 91) && // numeric (A-Z)
+              !(code > 96 && code < 123)) { // numeric (a-z)
+                return false;
+              }
+              return true;
+            }
+          ```
+
+- All the above mentioned problem solving strategies are adapted from `George Polya`, whose book `How To Solve It` is
   a great resource for anyone who wants to become a better problem solver.
+
+- RECAP
+
+  - Understand the Problem
+  - Explore Concrete Examples
+  - Break It Down
+  - Solve/Simplify
+  - Look Back and Refactor
 
 - KEYWORDS
   - It is worth being deliberate
@@ -174,3 +262,5 @@
   - Catch any lingering and conceptual issues
   - Putting all your Eggs in one Basket.
   - In any Interview Setting, you need to remain calm and answer questions confidently
+  - Really important to strieve for those goals
+  - Look back and reflect on it
