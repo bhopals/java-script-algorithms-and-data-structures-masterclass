@@ -113,6 +113,51 @@
 
   - SOLVE / SIMPLIFY
 
+    - SOLVE THE PROBLEM. If you can't, SOLVE A SIMPLER PROBLEM
+
+    - SIMPLIFY
+
+      - Find the core difficulty in what you are trying to do.
+      - Temporarily ignore that difficulty
+      - Write a simplified solution
+      - Then incorporate that difficulty back in
+
+    - EXAMPLE
+
+      - QUESTION - Write a function which takes in a string and returns counts of each character in the string.
+      - ANSWER
+        - Suppose, I have trouble in Looping, I would pick one charact, and process it
+        - OR Suppose, I have no idea how key-value works in object, just loop over and print it
+        - OR Suppose, you do not know the built (upper/lower) in method, then use the converted value, and then deal
+          with that later
+        - OR Suppose,
+
+      ```
+        function charCount() {
+          // Create an Object to return at the end
+          var result = {}
+          // Loop Over the string, for each character...
+             for (let i=0; i<str.lenght ; i++) {
+               let char = str[i].toLowerCase();
+               // if the char is a number/letter AND is a key in a object, add ONE (+1) to count
+               if(result[char] > 0) {
+                result[char]++;
+               }
+               // if the char is a number/letter AND is not in object, add it and set value to 1
+               else {
+                 result[char] = 1;
+               }
+             }
+             // if char is something else (space, period, etc.), Do not do anything
+
+          // Return the created object
+        }
+      ```
+
+      - The Goal should be, start with a Simple Solution - Get the basic steps right in, and then deal with harder parts later on.
+        More like evolve the solution. Simpler ==> Harder ==> Hardest
+      - Get the right pieces in place
+
   - LOOK BACK AND REFACTOR
 
 - All the above mentioned problem solving strategies are adapted from `Geroge Polya`, whose book `How To Solve It` is
@@ -127,3 +172,5 @@
   - I had a moment of panic
   - Help you build more Robust and Full proof solution
   - Catch any lingering and conceptual issues
+  - Putting all your Eggs in one Basket.
+  - In any Interview Setting, you need to remain calm and answer questions confidently
