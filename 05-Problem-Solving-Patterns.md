@@ -147,3 +147,28 @@
         let str = str1[i]
     }
     ```
+
+#### Multiple Pointers Pattern
+
+- Creating POINTERS or values that correspond to an index or position and move towards
+  the beginning, end or middle based on a certain condition.
+
+- Very effecient for solving problems with minimal space complexity as well.
+
+- EXAMPLE
+
+  - QUESTION:
+  - Write a function called `sumZero` which accepts a sorted array of integers. The function should find the first pair where
+    the SUM is ZERO (0). Return an array that includes both values that SUM to ZERO or UNDFINED if a pair does not exist.
+
+    ```
+     sumZero([-3, -2, -1, 0, 1, 2, 3]) // undefined
+     sumZero([-2, 0, 1, 3]) // undefined
+     sumZero([1, 2, 3]) // undefined
+    ```
+
+  - ANSWER:
+
+    - SOLUTION 1 - NAIVE SOLUTION - Time complexity O(N^2), Space Complexity O(1)
+
+    - SOLUTION 2 - MULTIPLE POINTER SOLUTION
