@@ -238,3 +238,48 @@
        return i;
    }
 ```
+
+### SLIDING WINDOW PATTERN
+
+- This pattern involves creating a `WINDOW` which can either be an ARRAY or NUMBER from one position to another.
+- Depending on a certain condition, the window either increases or closes (and a new Window is created)
+- Very useful for keeping track of a subset of data in an Array/String etc.
+
+- EXAMPLE
+
+  - Write a function called maxSubarraySum which accepts an array of integers and a number called `n`.
+    The function should calculate the maximum sum on `n` consecutive elements in the array.
+
+  ```
+    maxSubarraySum([1,2,5,2,8,1,5], 2) // 10
+    maxSubarraySum([1,2,5,2,8,1,5], 4) // 17
+    maxSubarraySum([4,2,1,6], 1) // 6
+    maxSubarraySum([4,2,1,6,2], 4) // 13
+    maxSubarraySum([], 4) // null
+
+  ```
+
+  - SOLUTION:
+
+  ```
+    function maxSubarraySum(arr, num) {
+        if (arr.length < num) {
+            return null;
+        }
+
+        let maxSum = 0;
+        let tempSum = 0;
+
+        for (let i = 0; i < num; i++) {
+            maxSum += arr[i];
+        }
+
+        tempSum = maxSum;
+        for (let j = num; j < arr.length; j++) {
+            tempSum = tempSum - arr[j - num] + arr[j];
+            maxSum = Math.max(maxSum, tempSum);
+        }
+
+        return maxSum;
+    }
+  ```
