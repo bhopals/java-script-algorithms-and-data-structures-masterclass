@@ -87,9 +87,33 @@
              - charCount("#$#$##")
           - Covering Edge cases helps us build robust and fullproof solution.
 
-  - Break It Down
-  - Solve/Simplify
-  - Look Back and Refactor
+  - BREAK IT DOWN
+
+    - Explicitly Write out the Steps that you need to take
+
+      - This forces you to think about the code that you'll write before you write it, and
+        helps you catch any lingering conceptual issues or misunderstandings before you dive in and have
+        to worry about details (e.g. language syntax) as well.
+
+    - EXAMPLE
+
+      - QUESTION - Write a function which takes in a string and returns counts of each character in the string.
+      - ANSWER
+
+      ```
+        function charCount() {
+          // Create an Object to return at the end
+          // Loop Over the string, for each character...
+             // if the char is a number/letter AND is a key in a object, add ONE (+1) to count
+             // if the char is a number/letter AND is not in object, add it and set value to 1
+             // if char is something else (space, period, etc.), Do not do anything
+          // Return the created object
+        }
+      ```
+
+  - SOLVE / SIMPLIFY
+
+  - LOOK BACK AND REFACTOR
 
 - All the above mentioned problem solving strategies are adapted from `Geroge Polya`, whose book `How To Solve It` is
   a great resource for anyone who wants to become a better problem solver.
@@ -102,3 +126,4 @@
   - Ask very deliberate questions
   - I had a moment of panic
   - Help you build more Robust and Full proof solution
+  - Catch any lingering and conceptual issues
