@@ -5,6 +5,7 @@
  * function should check whether the characters in the first string appear
  * somewhere in the second string, <strong>without their order changing.</strong>
  *
+ *  Multiple Pointers
  */
 function isSubsequence(sub, main) {
   if (sub.length === 0 || sub.length > main.length) {
