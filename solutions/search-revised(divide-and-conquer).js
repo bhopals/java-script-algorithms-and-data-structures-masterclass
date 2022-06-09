@@ -5,7 +5,6 @@
  * Complexity O(Log N) - Binary Search
  *
  */
-
 function search(array, val) {
   let min = 0;
   let max = array.length - 1;
@@ -21,7 +20,7 @@ function search(array, val) {
       max = middle - 1;
     }
   }
-  return -1; //
+  return -1;
 }
 
 console.log(search([1, 2, 3, 4, 5, 6], 4), 3); // 3
