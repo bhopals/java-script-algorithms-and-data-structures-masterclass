@@ -169,6 +169,8 @@ function collectOdds(arr) {
 collectOdds([1, 2, 3, 4, 5, 6, 7]);
 ```
 
+#### Pure Recursion
+
 - KEYWORDS
   - Lots of students approach Recursion with bit of Apprehension.
   - It's somewhat initmidating
