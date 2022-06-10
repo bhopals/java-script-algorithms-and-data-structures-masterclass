@@ -76,6 +76,43 @@
    countDown(5)
   ```
 
+#### Our second recursive function
+
+- EXAMPLE
+  ```
+    function sumRange(num) {
+        if(num === 1)  return 1; //BASE CASE
+        return num + sumRange(num-1) // DIFFERENT INPUT (num - 1)
+    }
+    sumRange(5)
+  ```
+
+#### Writing Factorial Iteratively
+
+```
+    function factorial(number) {
+        total = 1;
+        for (let index = number; index > 1; index--) {
+            total*=index;
+        }
+        return total;
+    }
+
+    factorial(5)
+
+```
+
+### Writing Factorial Recursively
+
+```
+    function factorial(number) {
+        if(number == 1) return 1;
+        return number * factorial(number-1);
+    }
+    factorial(5)
+
+```
+
 - KEYWORDS
   - Lots of students approach Recursion with bit of Apprehension.
   - It's somewhat initmidating
