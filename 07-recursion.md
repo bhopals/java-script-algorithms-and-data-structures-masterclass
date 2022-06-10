@@ -171,7 +171,29 @@ collectOdds([1, 2, 3, 4, 5, 6, 7]);
 
 #### Pure Recursion
 
+- The above can be implemented using `PURE RECURSION`
+- Means the function itself is self-contained and recursive, we don't have some external data structures (`let result = []`)
+
 - KEYWORDS
   - Lots of students approach Recursion with bit of Apprehension.
   - It's somewhat initmidating
   - Really take and absorb the content
+
+```
+function collectOddsValues(arr) {
+  let result = [];
+  if (arr.length == 0) return result; //BASE Case
+  if (arr[0] % 2 !== 0) {
+    result.push(arr[0]);
+  }
+  result = result.concat(collectOddsValues(arr.slice(1))); // DIFFERENT Input
+  return result;
+}
+
+collectOddsValues([1, 2, 3, 4, 5, 6, 7]);
+```
+
+- PURE RECURSION TIPS
+  - For ARRAYS, use methods like `slice`, the `spread` operator, and `concat` that make COPIES of the array so you do not mutate them.
+  - Remember that STRINGS are IMMUTABLE so you will need to use methods like `slice`, `substr`, or `substring` to make copies of strings.
+  - To make copies of OBJECTS use `Object.assign`, or the `spread` operator
