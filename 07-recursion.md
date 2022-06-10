@@ -113,6 +113,38 @@
 
 ```
 
+#### Where things go wrong (Common Pitfalls)
+
+- No Base case (OR Incorrect/Invalid Base case)
+- Forgetting to return (From Base Case and At the end of Factorial) or returning the wrong thing!
+- Importance of returning from BASE case is crucial otherwise you end up getting Max Call stack size exceeded.
+- Avoid Stack Overflow!
+
+- EXAMPLE 1 - Stack overflow error because Same input is being passed - Should be DIFFERENT INPUT
+
+  ```
+    function factorial(number) {
+        if(number == 1) return 1;
+        return number * factorial(number);
+    }
+  ```
+
+- EXAMPLE 2 - Stack overflow error because BASE Case is not returning anything (Just console.log(1))
+
+```
+  function factorial(number) {
+      if(number == 1) console.log(1);
+      return number * factorial(number-1);
+  }
+```
+
+- RECURSION MEANS TWO THINGS to keep in MIND
+
+  - BASE CASE (With valid return)
+  - DIFFERENT INPUT when making recursive call
+
+#### Helper Method Recursion (Design Pattern)
+
 - KEYWORDS
   - Lots of students approach Recursion with bit of Apprehension.
   - It's somewhat initmidating
