@@ -6,8 +6,8 @@
 function capitalizeFirstR(arr) {
   let result = [];
   if (arr.length === 0) return result;
-  result.push(arr[0][0].toUpperCase().concat(arr[0].slice(1)));
-  return result.concat(capitalizeFirstR(arr.slice(1)));
+  const str = arr[0][0].toUpperCase().concat(arr[0].slice(1));
+  return result.push(str) && result.concat(capitalizeFirstR(arr.slice(1)));
 }
 
 function capitalizeFirstL(arr) {
