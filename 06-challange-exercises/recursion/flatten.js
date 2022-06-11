@@ -4,7 +4,6 @@
  * a new array with all values flattened.
  *
  */
-
 function flatten(array) {
   let arr = [];
   for (let i = 0; i < array.length; i++) {
