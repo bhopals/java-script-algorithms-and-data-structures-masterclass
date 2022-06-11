@@ -194,6 +194,24 @@ collectOddsValues([1, 2, 3, 4, 5, 6, 7]);
 ```
 
 - PURE RECURSION TIPS
+
   - For ARRAYS, use methods like `slice`, the `spread` operator, and `concat` that make COPIES of the array so you do not mutate them.
   - Remember that STRINGS are IMMUTABLE so you will need to use methods like `slice`, `substr`, or `substring` to make copies of strings.
   - To make copies of OBJECTS use `Object.assign`, or the `spread` operator
+
+- NOTES
+  - How to get check for TYPES in Javascript
+    - 1.`typeof`
+      - typeof [] ==> `object`
+      - typeof {} ==> `object`
+      - typeof 12 ==> `number`
+      - typeof 'test' ==> `string`
+      - typeof 'undefined' ==> `undefined`
+      - typeof 'null' ==> `object`
+    - 2. Object.prototype.toString.call(<element>)
+         - `[object Object]`
+         - `[object String]`
+         - `[object Number]`
+         - `[object Array]`
+         - `[object Undefined]`
+         - `[object Null]`
