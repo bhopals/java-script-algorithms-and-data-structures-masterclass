@@ -58,9 +58,9 @@ console.log(linearSearch([100], 200), -1)
 #### Linear Search BIG O
 
 - Time Complexity
-  - Best Case - O(1)
-  - Average Case - O(n)
-  - Worst Case - O(n)
+  - Best Case - `O(1)`
+  - Average Case - `O(n)`
+  - Worst Case - `O(n)`
 
 #### Intro to Binary Search
 
@@ -106,5 +106,50 @@ console.log(binarySearch([1, 2, 3, 4, 5], 2), 1);
 console.log(binarySearch([1, 2, 3, 4, 5], 3), 2);
 console.log(binarySearch([1, 2, 3, 4, 5], 5), 4);
 console.log(binarySearch([1, 2, 3, 4, 5], 6), -1);
+
+```
+
+#### Binary Search BIG O
+
+- Time Complexity
+  - Best Case - `O(1)`
+  - Worst Case - `O(log n)`
+  - Average Case - `O(log n)`
+
+#### Naive String Search
+
+- Suppose you want to count the number of times a smaller string appears in a longer string
+- A straightforward approach involves checking pairs of characters individually (Linear Search)
+- But if we are checking for some PATTERN (more than one char match)
+- Example
+  - Search `omg` in `wowomgzong`
+
+#### Naive String Pseudocode
+
+- Loop over the longer string
+- Loop over the shorter string
+- If the character don't match, break out of the inner loop
+- If the character do match, keep going
+- If you complete the inner loop and find a match, increment the count of matches
+- Return the count
+
+- EXAMPLE
+
+```
+    function search(str, text) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            for (let j = 0; j < text.length; j++) {
+            if (text[j] !== str[i + j]) break;
+            if (j === text.length - 1) count++;
+            }
+        }
+        return count;
+    }
+
+    console.log(search("owomgowomg", "omg"), 2);
+    console.log(search("testontestone", "one"), 1);
+    console.log(search("testontestone", "two"), 0);
+    console.log(search("adfefrdfrefrdssefreddefr", "efr"), 4);
 
 ```
