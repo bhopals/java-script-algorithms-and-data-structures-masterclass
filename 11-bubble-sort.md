@@ -109,6 +109,36 @@
     console.log(bubbleSortFromEnd([6, 4, 15, 10]));
     ```
 
+#### Bubble Sort: Optimization
+
+- Nearly sorted input array require special handling in Bubble Sort.
+  Otherwise, despite the elements are already sorted, the loop will still go on from start to end (without swapping)
+
+- To handle that, we can Short-Circuit our code. All we need to do is check last time through, Did we make any SWAP?
+  If the answer is NO. If we didn't swap anything, that means we are DONE!
+
+```
+function bubbleSortFromEndAfterOptimize(arr) {
+  let noSwaps;
+  for (let i = arr.length - 1; i > 0; i--) {
+    console.log("bubbleSortFromEnd - i", i);
+    noSwaps = true;
+    for (let j = 0; j < i - 1; j++) {
+      console.log("inner - j:", i);
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        noSwaps = false;
+      }
+    }
+    if (noSwaps) break;
+  }
+  return arr;
+}
+console.log(bubbleSortFromEndAfterOptimize([8, 1, 2, 3, 4, 5, 6, 7]));
+```
+
+### Bubble Sort
+
 - References (Visulizations)
   - https://visualgo.net/en/sorting
   - https://www.toptal.com/developers/sorting-algorithms
