@@ -1,9 +1,11 @@
 function bubbleSortFromEndBeforeOptimize(arr) {
-  for (var i = arr.length - 1; i > 0; i--) {
-    console.log("bubbleSortFromEnd - i", i);
-    for (var j = 0; j < i - 1; j++) {
-      console.log("inner - j:", i);
+  for (let i = arr.length - 1; i > 0; i--) {
+    // console.log("bubbleSortFromEnd - i", i);
+    for (let j = 0; j < i; j++) {
+      // console.log(`inner  j: ${j} (${arr[j]})`);
+
       if (arr[j] > arr[j + 1]) {
+        // console.log(`SWAPPING ${arr[j]} and ${arr[j + 1]}`);
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
     }
@@ -17,10 +19,12 @@ console.log("============================================================");
 function bubbleSortFromEndAfterOptimize(arr) {
   let noSwaps;
   for (let i = arr.length - 1; i > 0; i--) {
-    console.log("bubbleSortFromEnd - i", i);
+    // console.log("bubbleSortFromEnd - i", i);
     noSwaps = true;
-    for (let j = 0; j < i - 1; j++) {
-      console.log("inner - j:", i);
+    for (let j = 0; j < i; j++) {
+      // console.log(`SWAPPING ${arr[j]} and ${arr[j + 1]}`);
+      // console.log(`inner  j: ${j} (${arr[j]})`);
+
       if (arr[j] > arr[j + 1]) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
         noSwaps = false;
