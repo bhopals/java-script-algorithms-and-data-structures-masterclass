@@ -42,5 +42,37 @@
     console.log(sort([6, 4, 15, 10], (a, b) => b - a)); // [15, 10, 6, 4]
   ```
 
-- References
+#### Bubble Sort: Overview
+
+- BubbleSort
+
+  - A sorting algorithm where the largest values bubble up to the top!
+  - Here is the link to Visualize - https://visualgo.net/en/sorting
+
+- Before we SORT, we Must SWAP!
+
+  - Many sorting algorithms involves some type of swapping functionality (e.g. Swapping to numbers to put them in ORDER)
+  - 1. ES5
+    ```
+     function swap(arr, idx1, idx2) {
+         var temp = arr[idx1];
+         arr[idx1] = arr[idx2];
+         arr[idx2] = temp;
+     }
+    ```
+  - 2. ES2015
+
+    ```
+     function swap(arr, idx1, idx2) => { [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]; }
+    ```
+
+- BubbleSort Pseudocode
+
+  - Start Looping from with a variable called `i` the end of the array towards the beginning.
+  - Start an INNER Loop with a variable called `j` from the beginning until `i-1`.
+  - If `arr[j]` is greater than `arr[j+1]`, swap those two values!
+  - Return the Sorted Array
+
+- References (Visulizations)
+  - https://visualgo.net/en/sorting
   - https://www.toptal.com/developers/sorting-algorithms
