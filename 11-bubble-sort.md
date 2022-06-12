@@ -73,6 +73,42 @@
   - If `arr[j]` is greater than `arr[j+1]`, swap those two values!
   - Return the Sorted Array
 
+  - Example - Outer Loop Start from Beginning - Not Performant
+
+    ```
+    function bubbleSortBegin(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+            }
+        }
+        return arr;
+    }
+    console.log(bubbleSortBegin([6, 4, 15, 10]));
+
+    ```
+
+    - Outer Loop starts from the END - More Performant (Less Iterations)
+
+    ```
+    function bubbleSortFromEnd(arr) {
+        for (var i = arr.length - 1; i > 0; i--) {
+            console.log("bubbleSortFromEnd - i", i);
+            for (var j = 0; j > i - 1; j++) {
+            console.log(arr, arr[j], arr[j + 1]);
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+            }
+        }
+        return arr;
+    }
+
+    console.log(bubbleSortFromEnd([6, 4, 15, 10]));
+    ```
+
 - References (Visulizations)
   - https://visualgo.net/en/sorting
   - https://www.toptal.com/developers/sorting-algorithms
