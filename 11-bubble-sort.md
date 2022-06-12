@@ -109,7 +109,7 @@
     console.log(bubbleSortFromEnd([6, 4, 15, 10]));
     ```
 
-#### Bubble Sort: Optimization
+#### Bubble Sort: Optimization (Using `noSwap` short circuit)
 
 - Nearly sorted input array require special handling in Bubble Sort.
   Otherwise, despite the elements are already sorted, the loop will still go on from start to end (without swapping)
@@ -137,7 +137,10 @@ function bubbleSortFromEndAfterOptimize(arr) {
 console.log(bubbleSortFromEndAfterOptimize([8, 1, 2, 3, 4, 5, 6, 7]));
 ```
 
-### Bubble Sort
+### Bubble Sort: BIG O Complexity
+
+- Generally its N*N (as we have Multiple loops (OUTER and INNER)) - `O(N*N)`
+- However, for nearly Sorted array, and `noSwap` flag, its - `O(N)`
 
 - References (Visulizations)
   - https://visualgo.net/en/sorting
