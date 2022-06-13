@@ -29,6 +29,17 @@
     - Insertion and Deletion can be expensive (As everything needs to be reindexed)
     - Can quickly be accessed at a specific index
 
+#### Linked List Node
+
+```
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+```
+
 #### Singly Linked List Push Method
 
 - PUSHING
@@ -54,6 +65,21 @@
   - Increment the length by 1 (length++)
   - return `this`
 
+  ```
+   push(val) {
+     const newNode = new Node(val);
+     if (this.head == null) {
+       this.head = newNode;
+       this.tail = this.head;
+     } else {
+       this.tail.next = newNode;
+       this.tail = newNode;
+     }
+     this.length++;
+     return this;
+   }
+  ```
+
 #### Singly Linked Listy Pop Method
 
 - POPPING
@@ -73,14 +99,38 @@
   - Return the value of the node removed
 
 - DETAILED POP Pseudocode
+
   - If `HEAD == null`, return `undefined`
   - Else
+
     - create `current` and `prevNode` variable
     - WHILE (current.next) - set `prevNode` to `current`, and `current` to `current.next`
     - set `tail` to `current`, and `tail.next` to `null`
     - set `length--`
     - (special case - if length 0, set `head` and `tail` to `null`)
     - return `current` - the item that has been popped out/ removed
+
+    ```
+    pop() {
+      if (!this.head) return;
+      else {
+        let current = this.head;
+        let newTail = current;
+        while (current.next) {
+          newTail = current;
+          current = current.next;
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        //work around - for now
+        if (this.length === 0) {
+          this.head = this.tail = null;
+        }
+        return current;
+      }
+    }
+    ```
 
 #### Shifting (Remove a Node from Beginning)
 
@@ -95,12 +145,27 @@
   - Return the value of the node removed
 
 - DETAILED SHIFT Pseudocode
+
   - If `!this.head` return `undefined`
   - Assign `head` into `temp` variable (`let currentHead = this.head`)
   - Update the `head` to next element (this.head = currentHead.next)
   - Decrement the length by 1 (`this.length--;`)
   - OPTINALLY - check if the length is ZERO, reset both HEAD and TAIL to null
     - `this.length === 0 ? this.tail = this.head = null; ''`
+
+  ```
+  shift() {
+      if (!this.head) return undefined;
+      const currentHead = this.head;
+      this.head = currentHead.next;
+      this.length--;
+      //work around - for now
+      if (this.length === 0) {
+        this.head = this.tail = null;
+      }
+      return node;
+  }
+  ```
 
 #### Unshifting (Adding a new Node to the Beginning)
 
@@ -117,11 +182,26 @@
   - Return the Linked List
 
 - DETAILED UNSHIFTING Pseudocode
+
   - Create a new Node (`let newNode = new Node(val);`)
   - If Linked List is Empty (`!this.head == null`), set Head and Tail to the newNode (`this.head = this.tail = newNode;`)
   - Else set newNode NEXT to current HEAD (`newNode.next = this.head`), and Update the HEAD to newNode (`this.head = newNode`)
   - Increment the length by 1 (`this.length++;`)
   - Return Linked List (`return this;`)
+
+  ```
+    unshift(val) {
+      let newNode = new Node(val);
+      if (!this.head) {
+        this.head = this.tail = newNode;
+      } else {
+        newNode.next = this.head;
+        this.head = newNode;
+      }
+      this.length++;
+      return this;
+    }
+  ```
 
 #### Get
 
@@ -135,12 +215,26 @@
   - Return the Item on the matched index
 
 - DETAILED GET Pseudocode
+
   - Check Index out of bound case (`if (index < 0 || index >= this.length) return null;`)
   - Init a counter to 0 (`let counter = 0;`)
   - Create a variable to hold current (`let current = this.head;`)
   - Iterate over till counter !== index (`while (counter !== index)`)
     - For each iteration, Increment the counter, and Set the current to next ( `counter++; current = current.next;`)
   - Once Iteration finishes, return current (`return current`)
+
+  ```
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
+  ```
 
 #### Set
 
@@ -153,17 +247,30 @@
   - If the NODE is found, the value of that node to be the value passed to the function and return TRUE;
 
 - DETAILED SET Pseudocode
+
   - Create a function `set` that accept `index` and `val` - `set(index, newVal){...}`
   - Call `get` to get the element
   - If `get` returns the element, update the element.val to newVal, and return `true`
     - `if (foundNode) { foundNode.val = val;return true;}`
   - Else return `false` (`return false;`)
 
+  ```
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+  ```
+
 #### Singly Linked List: Insert
 
 - Adding a node to the Linked List at a specific position
 
 - INSERT Pseudocode
+
   - If the INDEX is less than zero or greater than the length, return false (Index out of bound case)
   - If the INDEX is the same as the length, push a new node to the end of the list.
   - If the INDEXD is zero, unshift a new node to the start of the list.
@@ -172,6 +279,21 @@
   - Set the next property on the new node to be the previous next
   - Increment the length
   - return true
+
+- INSERT Code Example
+  ```
+  insert(index, val) {
+      if (index < 0 || index > this.length) return false;
+      if (index === this.length) !!this.push(val);
+      if (index === 0) return !!this.unshift(val); // A way to convert `this` or other return to boolean - coersion
+      let prevNode = this.get(index - 1);
+      let newNode = new Node(val);
+      newNode.next = prevNode.next;
+      prevNode.next = newNode;
+      this.length++;
+      return true;
+    }
+  ```
 
 ##### Visualization
 
