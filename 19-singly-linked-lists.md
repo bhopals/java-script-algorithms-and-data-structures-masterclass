@@ -142,6 +142,23 @@
     - For each iteration, Increment the counter, and Set the current to next ( `counter++; current = current.next;`)
   - Once Iteration finishes, return current (`return current`)
 
+#### Set
+
+- Changing the value of a node based on it's position in the Linked List
+
+- SET Pseudocode
+
+  - Use your `get` function to find the specific node.
+  - If the NODE is not found, return FALSE
+  - If the NODE is found, the value of that node to be the value passed to the function and return TRUE;
+
+- DETAILED SET Pseudocode
+  - Create a function `set` that accept `index` and `val` - `set(index, newVal){...}`
+  - Call `get` to get the element
+  - If `get` returns the element, update the element.val to newVal, and return `true`
+    - `if (foundNode) { foundNode.val = val;return true;}`
+  - Else return `false` (`return false;`)
+
 ##### Visualization
 
 - REFERENCE - https://visualgo.net/en/list?slide=1
