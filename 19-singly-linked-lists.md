@@ -295,6 +295,74 @@ class Node {
     }
   ```
 
+#### Singly Linked List: Remove
+
+- Removing a node from the Linked List at a specific position
+
+- Remove Pseudocode
+
+  - If the index is less than ZERO or Greater than the length, return undefined
+  - If the index is the same as the lenght-1, POP (remove at the end)
+  - If the index is 0, shift (remove from start)
+  - Otherwise using the `get` method, access the node at the index-1
+  - Set the next property on that node to be the next of the next node
+  - Decrement the length
+  - Return the valie of the node removed
+
+- Code Example
+
+  ```
+  remove(index) {
+      if (index < 0 || index >= this.length) return false;
+      if (index === this.length - 1) return this.pop();
+      if (index === 0) return this.shift();
+      const prevNode = this.get(index - 1);
+      const removed = prevNode.next;
+      prevNode.next = removed.next;
+      this.length--;
+      return removed;
+    }
+  ```
+
+#### Singly Linked: reverse
+
+- Reversing the Linked List in place! (Without making a copy/temp) - Traverse and Reverse method
+- Example
+  (HEAD) 13 => 27 => 32 => 71 (TAIL)
+  TO
+  (TAIL) 13 <= 27 <= 32 <= 71 (HEAD)
+
+- REVERSE Pseudocode
+
+  - Swap the HEAD and TAIL
+  - Create a variable called NEXT
+  - Create a variable called PREV
+  - Create a variable called NODE and initialize it to the HEAD Property
+  - Loop through the list
+  - Set NEXT property on the NODE to be whatever PREV is
+  - Set PREV to be the value of the NODE variable
+  - Set the NODE variable to be the value of the next variable
+
+- Code Example
+
+  ```
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let prev = null;
+    let next = null;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+  ```
+
 ##### Visualization
 
 - REFERENCE - https://visualgo.net/en/list?slide=1
