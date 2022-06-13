@@ -241,3 +241,7 @@
   - <CONSTANT/Logarithm/LINEAR/Linearithmic/Quadratic/Cubic/Exponential/Factorial> Time COMPLEXITY
   - <CONSTANT/Logarithm/LINEAR/Linearithmic/Quadratic/Cubic/Exponential/Factorial> (Auxiliary) Space COMPLEXITY
   - Compare the Runtime of all the algorithms to choose the best one
+
+#### Asymptotic Analysis
+
+- The idea is to measure order of growth

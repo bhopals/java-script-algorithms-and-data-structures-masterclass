@@ -72,7 +72,7 @@
   - Decrement the length of the list by 1
   - Return the value of the node removed
 
-- DETAILED Pseudocode
+- DETAILED POP Pseudocode
   - If `HEAD == null`, return `undefined`
   - Else
     - create `current` and `prevNode` variable
@@ -81,6 +81,39 @@
     - set `length--`
     - (special case - if length 0, set `head` and `tail` to `null`)
     - return `current` - the item that has been popped out/ removed
+
+#### Shifting (Remove a Node from Beginning)
+
+- Removing a new node from the beginning of the Linked List
+
+- SHIFTING Pseudocode
+
+  - If there are no NODES, return undefined
+  - Store the current HEAD property in a `temp` variable
+  - Set the HEAD property to be the current HEAD's next property
+  - Decrement the length by 1
+  - Return the value of the node removed
+
+- DETAILED SHIFT Pseudocode
+  - If `!this.head` return `undefined`
+  - Assign `head` into `temp` variable (`let currentHead = this.head`)
+  - Update the `head` to next element (this.head = currentHead.next)
+  - Decrement the length by 1 (`this.length--;`)
+  - OPTINALLY - check if the length is ZERO, reset both HEAD and TAIL to null
+    - `this.length === 0 ? this.tail = this.head = null; ''`
+
+#### Unshifting (Adding a new Node to the Beginning)
+
+- Adding a new Node to the beginning of the Linked List
+
+- UNSHIFTING Pseudocode
+  - This function should accept a value
+  - Create a new node using the value passed to the function
+  - If there is no head property on the list, set the head and tail to the newly created node
+  - Otherwise, set the newly created node's NEXT property to be the current HEAD property on the list
+  - Set the HEAD property to the list to be that newly created node
+  - Increment the length by 1
+  - Return the Linked List
 
 ##### Visualization
 
