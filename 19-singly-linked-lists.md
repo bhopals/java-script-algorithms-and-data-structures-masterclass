@@ -107,6 +107,7 @@
 - Adding a new Node to the beginning of the Linked List
 
 - UNSHIFTING Pseudocode
+
   - This function should accept a value
   - Create a new node using the value passed to the function
   - If there is no head property on the list, set the head and tail to the newly created node
@@ -114,6 +115,32 @@
   - Set the HEAD property to the list to be that newly created node
   - Increment the length by 1
   - Return the Linked List
+
+- DETAILED UNSHIFTING Pseudocode
+  - Create a new Node (`let newNode = new Node(val);`)
+  - If Linked List is Empty (`!this.head == null`), set Head and Tail to the newNode (`this.head = this.tail = newNode;`)
+  - Else set newNode NEXT to current HEAD (`newNode.next = this.head`), and Update the HEAD to newNode (`this.head = newNode`)
+  - Increment the length by 1 (`this.length++;`)
+  - Return Linked List (`return this;`)
+
+#### Get
+
+- Retrieving a node by it's position in the Linked List
+
+- GET Pseudocode
+
+  - The function should accept an Index
+  - If the Index is less than ZERO or greater than or equal to the lenght of the list, return NULL (Index out of bound case)
+  - Loop through the list until you reach the index and return the node at that specific index (use a COUNTER Variable)
+  - Return the Item on the matched index
+
+- DETAILED GET Pseudocode
+  - Check Index out of bound case (`if (index < 0 || index >= this.length) return null;`)
+  - Init a counter to 0 (`let counter = 0;`)
+  - Create a variable to hold current (`let current = this.head;`)
+  - Iterate over till counter !== index (`while (counter !== index)`)
+    - For each iteration, Increment the counter, and Set the current to next ( `counter++; current = current.next;`)
+  - Once Iteration finishes, return current (`return current`)
 
 ##### Visualization
 
