@@ -159,6 +159,20 @@
     - `if (foundNode) { foundNode.val = val;return true;}`
   - Else return `false` (`return false;`)
 
+#### Singly Linked List: Insert
+
+- Adding a node to the Linked List at a specific position
+
+- INSERT Pseudocode
+  - If the INDEX is less than zero or greater than the length, return false (Index out of bound case)
+  - If the INDEX is the same as the length, push a new node to the end of the list.
+  - If the INDEXD is zero, unshift a new node to the start of the list.
+  - Otherwise, using the `get` method, access the node at the index-1 (if INSERT at 6th, then grab 5th Index)
+  - Set the next property on that node to be the new node
+  - Set the next property on the new node to be the previous next
+  - Increment the length
+  - return true
+
 ##### Visualization
 
 - REFERENCE - https://visualgo.net/en/list?slide=1
