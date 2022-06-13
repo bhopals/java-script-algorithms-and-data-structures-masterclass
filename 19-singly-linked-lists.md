@@ -363,6 +363,21 @@ class Node {
   }
   ```
 
+#### Singly Linked List: BIG O Complexity
+
+- INSERTION - O(1)
+- REMOVAL - It depends ... O(1) or O(N)
+- SEARCHING - O(N)
+- ACCESS - O(N)
+
+#### RECAP
+
+- Singly Linked Lists are an excellent alternative to arrays when insertion and deletion
+  at the beginning are frequently required.
+- Array contain a built in INDEX whereas Linked Lists DO NOT have any INDEX
+- The idea of a list data structure that consists of nodes is the foundation
+  for other data structures like Stacks and Queues.
+
 ##### Visualization
 
 - REFERENCE - https://visualgo.net/en/list?slide=1
