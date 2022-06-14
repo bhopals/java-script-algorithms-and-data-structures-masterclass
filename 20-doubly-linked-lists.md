@@ -179,7 +179,55 @@
 
 #### Get
 
--
+- Accessing a node in a Doubly Linked List by its position
+- In this we have an option to Traverse from Both Sides (HEAD or TAIL), and
+  we can optimize traversing by figuring out which Side we Use (Based on the length)
+
+  - EXAMPLE - A Doubly Linked List of Size 20.
+    - If the GET Index is 15, we would use TAIL to traverse.
+    - If the GET Index is 12, we would use TAIL to traverse.
+    - If the GET Index is 3, we would use HEAD to traverse.
+    - If the GET Index is 8, we would use HEAD to traverse.
+
+- GET Pseudocode
+
+  - If the INDEX is less than 0 or greater or equal to the length, return undefined
+  - If the INDED is less than or equal to half the length of the list
+    - Loop through the list starting from the HEAD and loop towards the middle
+    - Return the node once it is found
+  - If the INDED is greated than half the length of the list
+    - Loop through the list starting from the TAIL and loop towards the middle
+    - Return the node once it is found
+
+- GET Code
+
+  ```
+    get(index) {
+      if (index < 0 || this.length <= index) return undefined; // Index Out of bound
+      const middle = Math.floor(this.length / 2);
+      if (index > middle) {
+        // Traverse from the TAIL
+        console.log("WORKING FROM THE END...");
+        let counter = this.length - 1;
+        let current = this.tail;
+        while (counter !== index) {
+          current = current.next;
+          counter--;
+        }
+        return current;
+      } else {
+        // Traverser from the HEAD
+        console.log("WORKING FROM THE START...");
+        let counter = 0;
+        let current = this.head;
+        while (counter !== index) {
+          current = current.next;
+          counter++;
+        }
+        return current;
+      }
+    }
+  ```
 
 #### Set
 
