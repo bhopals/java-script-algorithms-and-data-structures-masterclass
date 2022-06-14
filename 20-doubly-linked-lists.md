@@ -145,9 +145,41 @@
 
 #### Unshift
 
+- Adding a NODE at the beginning of the Doubly Linked List
+
 - UNSHIFT Pseudocode
 
+  - Create a new node with the value passed to the function
+  - If the lenght is 0
+    - Set the HEAD to the new node
+    - Set the TAIL to be the new node
+  - ELSE
+    - Set the prev property on the head of the list to be the new node
+    - Set the next property on the new node to be the head property
+    - Update the head to be the new node
+  - Increment the length
+  - Return the list
+
+- UNSHIFT Code
+  ```
+  unshift(val) {
+    const newNode = new Node(val);
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return true;
+  }
+  ```
+
 #### Get
+
+-
 
 #### Set
 
