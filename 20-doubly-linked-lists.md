@@ -45,3 +45,39 @@
        }
    }
   ```
+
+#### Push
+
+- Adding a node to the end of the Doubly Linked list
+
+- PUSH Pseudocode
+
+  - Create a new node with the value passed to the function
+  - If the HEAD property is null, set the HEAD and TAIL to be the newly created node
+  - If not, set the `next` property on the tail to be that node
+  - Set the `previous` property on the newly created node to be the tail
+  - Set the tail to be the newly created node
+  - Increment the length + 1
+  - Return the Doubly Linked List
+
+- CODE Sample
+  ```
+  push(val) {
+      const newNode = new Node(val);
+      if (this.length === 0) {
+          this.head = newNode;
+          this.tail = newNode;
+      } else {
+          this.tail.next = newNode;
+          newNode.prev = this.tail;
+          this.tail = newNode;
+      }
+      this.length++;
+      return this;
+     }
+  }
+  ```
+
+#### Pop
+
+#### Shift
