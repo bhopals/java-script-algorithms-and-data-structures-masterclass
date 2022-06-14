@@ -113,6 +113,7 @@
 - Removing a NODE from the beginning of the Doubly Linked List
 
 - SHIFT Pseudocode
+
   - If length is 0, return undefined
   - Store the current head property in a variable (we will cal it OLD head)
   - If the Length is ONE
@@ -123,6 +124,24 @@
     - Set the OLD head's next to NULL
   - Decrement the length
   - Return the HEAD
+
+- SHIFT Code
+  ```
+   shift() {
+        if (this.length === 0) return undefined;
+        const oldHead = this.head;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null;
+        }
+        this.length--;
+        return oldHead;
+    }
+  ```
 
 #### Unshift
 
