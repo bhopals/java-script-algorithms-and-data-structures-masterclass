@@ -231,6 +231,29 @@
 
 #### Set
 
+- Replacing the value of a Node to the in a Doubly Linked List
+
+- SET Pseudocode
+
+  - Create a variable which is the result of the `get` method at the index passed to the function
+    - If the `get` method returns a valid node, set the value of the node to be the value passed to the function
+    - Return true
+  - Otherwise return false;
+
+- SET Code
+
+  ```
+    set(index, value) {
+      const foundNode = this.get(index);
+      if (foundNode) {
+        foundNode.val = value;
+        return true;
+      }
+      return false;
+    }
+
+  ```
+
 #### Insert
 
 #### Remove
