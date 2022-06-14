@@ -272,8 +272,60 @@
 
 - INSERT Code
 
+```
+  insert(index, value) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (this.length === 0) return !!this.unshift(value);
+    if (this.length === 1) return !!this.push(value);
+
+    const newNode = new Node(value);
+    const beforeNode = this.get(index);
+    const afterNode = beforeNode.next;
+
+    newNode.next = afterNode;
+    newNode.prev = beforeNode;
+
+    afterNode.prev = newNode;
+    beforeNode.next = newNode;
+
+    this.length++;
+    return true;
+  }
+```
+
 #### Remove
+
+- Removing a node in a Doubly Linked List by a Certain Position.
 
 - REMOVE Pseudocode
 
+  - If the INDEX is less than zero or greater than or equal to the length return undefined.
+  - If the INDEX is 0, use `shift`
+  - If the INDEX is same as the length-1, use `pop`
+  - Use the get method to retrieve the item to be removed
+  - Update the next and prev properties to remove the found node from the list
+  - Set next and prev to NULL on the found node
+  - Decrement the length
+  - Return the removed node
+
 - REMOVE Code
+
+```
+ remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift(index);
+    if (index === this.length - 1) return this.pop();
+    const removeNode = this.get(index);
+    const prevNode = removeNode.prev;
+    const nextNode = removeNode.next;
+
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+
+    removeNode.next = null;
+    removeNode.prev = null;
+
+    this.length--;
+    return removeNode;
+  }
+```
