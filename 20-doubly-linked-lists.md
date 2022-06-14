@@ -329,3 +329,24 @@
     return removeNode;
   }
 ```
+
+#### Comparing Singly and Doubly Linked Lists
+
+- Big O of Doubly Linked Lists
+
+  - INSERTION - `O(1)`
+  - REMOVAL - `O(1)`
+  - SEARCHING - `O(N)`
+  - ACCESS - `O(N)`
+
+- Technically searching is `O(N/2)` but that is still `O(N)`
+
+#### Recap
+
+- Doubly Linked Lists are almost identical to Singly Linked Lists except there is an additional pointer
+  to previous nodes (So we have two connection on every node)
+
+  - Use Case Example - Browser History - Prev and Next Web Page
+
+- Better than Singly Linked Lists for finding nodes and can be done in half the time!
+- However, they do take up more memory considering the extra pointer
