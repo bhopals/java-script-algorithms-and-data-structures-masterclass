@@ -80,4 +80,58 @@
 
 #### Pop
 
-#### Shift
+- Removing a node from the END of the Doubly Linked List
+
+- POP Pseudocode
+
+  - If there is no HEAD, return undefined
+  - Store the current tail in a variable to return later
+  - If the length is 1, set the HEAD and TAIL to be null
+  - Update the tail to be the previous Node
+  - Set the newTail's next to null;
+
+- POP Code
+  ```
+    pop() {
+        if (this.length === 0) return undefined;
+        let tailItem = this.tail;
+        if (this.length === 1) {
+            this.tail = null;
+            this.head = null;
+        } else {
+            this.tail = tailItem.prev;
+            tailItem.prev = null; (To sever the connection of Chopped Node)
+            this.tail.next = null;
+        }
+        this.length--;
+        return tailItem;
+    }
+  ```
+
+#### Shift (Removes from the Begin)
+
+- Removing a NODE from the beginning of the Doubly Linked List
+
+- SHIFT Pseudocode
+  - If length is 0, return undefined
+  - Store the current head property in a variable (we will cal it OLD head)
+  - If the Length is ONE
+    - Set the head to be null
+    - Set the tail to be null
+  - ELSE
+    - Update the head to be the next of the OLD HEAD
+    - Set the OLD head's next to NULL
+  - Decrement the length
+  - Return the HEAD
+
+#### Unshift
+
+- UNSHIFT Pseudocode
+
+#### Get
+
+#### Set
+
+#### Insert
+
+#### Remove
