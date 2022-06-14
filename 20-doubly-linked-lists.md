@@ -256,4 +256,24 @@
 
 #### Insert
 
+- Adding a Node in a Doubly Linked List by a certain position
+
+- INSERT Pseudocode
+
+  - If the INDEX is less than ZERO or greater than equal to the lenght return false;
+  - If the INDEX is 0, use `unshift` (INSERT at the Beginning)
+  - If the INDEX is same as length, use `push` (INSERT at the end)
+  - Use the get method to access the index-1 to access the item right before we want to insert
+  - Set the NEXT and PREV Properties on the correct nodes to link everything together
+    - Set prev and next of the new node
+    - Set the prev and next of the index-1 node
+  - Increment the length
+  - Return true
+
+- INSERT Code
+
 #### Remove
+
+- REMOVE Pseudocode
+
+- REMOVE Code
