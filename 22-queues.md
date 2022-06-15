@@ -143,3 +143,18 @@ class Queue {
       return element.value;
   }
   ```
+
+#### BIG O of Queues
+
+- TIME COMPLEXITY
+  - INSERTION - `O(1)`
+  - REMOVAL - `O(1)`
+  - SEARCHING - `O(N)`
+  - ACCESS - `O(N)`
+
+#### RECAP
+
+- Queues are a FIFO data structure, all elements are first in and first out
+- Queues are useful for processing tasks and are foundational for more complex data structures
+- Insertion and Removal can be done in `O(1)`
+-
