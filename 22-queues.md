@@ -84,9 +84,10 @@ class Queue {
 
 - ENQUEUE
 
-  - Adding to the queue
+  - Adding to the end of the queue
 
 - ENQUEUE Pseudocode
+
   - The function accept the value
   - Create a new NODE using that value passed to the function
   - If there are no nodes in the queue, set this node to be the FIRST and LAST property of the queue
@@ -94,3 +95,51 @@ class Queue {
     property of the queue to be that NODE.
   - Increment the size of the queue by 1
   - Return the updated size of the queue
+
+- CODE Details
+  ```
+  enqueue(value) {
+      const newNode = new Node(value);
+      if (this.size === 0) {
+          this.first = newNode;
+          this.last = newNode;
+      } else {
+          this.last.next = newNode;
+          this.last = newNode;
+      }
+      return ++this.size;
+  }
+  ```
+
+#### Dequeue (Remove from begin)
+
+- DEQUEUE
+
+  - Remove from the beginning of the queue
+
+- DEQUEUE Pseudocode
+
+  - If there is no first property, just return null
+  - Store the first property in a TEMP variable
+  - See if the first is the same as the last (Check if there is only 1 Node),
+    if so, set the FIRST and LAST to be Null
+  - If there is more than 1 node, set the first property to be the next property of the first
+  - Decrement the size by 1
+  - Return the value of the node dequeued
+
+- CODE Example
+
+  ```
+  dequeue() {
+      if (this.size === 0) return null;
+      const element = this.first;
+      if (this.size === 1) {
+        this.first = null;
+        this.last = null;
+      } else {
+        this.first = this.first.next;
+      }
+      this.size--;
+      return element.value;
+  }
+  ```
