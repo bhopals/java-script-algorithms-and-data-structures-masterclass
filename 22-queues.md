@@ -39,8 +39,8 @@ class Queue {
         this.last = null;
         this.size = 0;
     }
-    add(value){}
-    remove(){}
+    enqueue(value){}
+    dequeue(){}
 }
 ```
 
@@ -79,3 +79,18 @@ class Queue {
 
 - This is not an efficient solution as remove from the beginning of the ARRAY requires re-indexing of the
   whole array - NOT RECOMMENDED
+
+#### Enqueue - Add to the queue
+
+- ENQUEUE
+
+  - Adding to the queue
+
+- ENQUEUE Pseudocode
+  - The function accept the value
+  - Create a new NODE using that value passed to the function
+  - If there are no nodes in the queue, set this node to be the FIRST and LAST property of the queue
+  - ELSE, set the NEXT property on the current LAST to be that Node, and then set the LAST
+    property of the queue to be that NODE.
+  - Increment the size of the queue by 1
+  - Return the updated size of the queue
