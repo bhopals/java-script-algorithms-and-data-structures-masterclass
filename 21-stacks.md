@@ -146,3 +146,18 @@ stack.shift('google');
   - If there is more than one node, set the FIRST property to be the NEXT property on the current FIRST
   - Decrement the size by 1
   - Retrun the value of the node removed
+
+#### Big O Stack
+
+- TIME COMPLEXITY
+  - INSERTION - `O(1)`
+  - REMOVAL - `O(1)`
+  - SEARCHING - `O(N)`
+  - ACCESS - `O(N)`
+
+#### RECAP
+
+- Stack are a LIFO data structure where the last value in is always the first one out.
+- Stacks are used to handle function invocations (the call stack), for opertaions like UNDO/REDO,
+  for routing (remember pages you have visited and go back/forward) and much more!
+- Stacks are not a build in data structure in JavaScript, but are relatively simple to implement.
