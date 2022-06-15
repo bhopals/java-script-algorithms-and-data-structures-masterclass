@@ -39,6 +39,8 @@ class DoublyLinkedList {
         counter--;
         current = current.prev;
       }
+      current.val = val;
+      return true;
     } else {
       //HEAD
       current = this.head;
