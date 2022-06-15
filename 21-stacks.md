@@ -30,6 +30,42 @@
 
 - There is more than one way of implmentating a stack
 
+- STACK IMPLEMENTATION
+  - ARRAY (Not Efficient)
+  - LINKED LIST (Recommended)
+
 #### Creating a Stack with an Array
 
-- There is more than one way of implmentating a stack
+Example:
+
+```
+let stack = [];
+
+// Add elements at the end in a Stack
+stack.push('google');
+stack.push('instagram');
+stack.push('youtube');
+console.log(stack) // ["google", "instagram", "youtube"]
+
+// Remove elements from the end in a Stack
+stack.pop();
+stack.pop();
+stack.pop();
+console.log(stack) // []
+
+// Insert at the beginning
+stack.unshift('google');
+
+// Remove at the beginning
+stack.shift('google');
+
+```
+
+- In array, adding at the begining and removing at the begining is not performant/efficient as any addition
+  or deletion from the beginning requires a REINDEXING of the whole array.
+
+- That is the reason, ARRAY is not recommended for STACK Implementation.
+- The stack just requires Last In and Last Out capability - Add and remove at the END
+  and that is the reason LINKED LIST Implementation is recommended
+
+####
