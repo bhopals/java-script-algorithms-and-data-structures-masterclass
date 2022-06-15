@@ -75,11 +75,38 @@ stack.shift('google');
 - We cannot use existing Linked List `push` and `pop` methods, because `pop`
   is not CONSTANT TIME (we need to traverse all the way from HEAD to TAIL)
 
+- IMPLEMENTATION Details
+
+  ```
+  class Node {
+      constructor(value) {
+          this.value = value;
+          this.next = null;
+      }
+  }
+
+  ```
+
+  ```
+  class Stack {
+    constructor() {
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+    push() {}
+    pop() {}
+  }
+  ```
+
+#### Push Method
+
 - PUSHING
 
   - Add a value to the top of the stack!
 
 - PUSING Pseudocode
+
   - The function should accept a value.
   - Create a new node with that value;
   - If there are no nodes in the stack, set the FIRST and LAST property to be the newly created node.
@@ -88,3 +115,34 @@ stack.shift('google');
   - Set the NEXT property on the node to be the previously created variable
   - Increament the size of the stack by 1
   - Return the stack size
+
+- PUSHING Code
+
+  ```
+  push(value) {
+      const element = new Node(value);
+      if (this.size === 0) {
+          this.first = element;
+          this.last = element;
+      } else {
+          var temp = this.first;
+          this.first = element;
+          this.first.next = temp;
+      }
+      return ++this.size;
+  }
+  ```
+
+#### Pop Method
+
+- POPPING
+
+  - REMOVE a value to the top of the stack!
+
+- POP Pseudocode
+  - If there are no nodes in the stack return null
+  - Create a temporary variable to store the FIRST property on the stack
+  - If there is only 1 node, set the FIRST and LAST property to be null
+  - If there is more than one node, set the FIRST property to be the NEXT property on the current FIRST
+  - Decrement the size by 1
+  - Retrun the value of the node removed
