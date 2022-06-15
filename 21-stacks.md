@@ -68,4 +68,23 @@ stack.shift('google');
 - The stack just requires Last In and Last Out capability - Add and remove at the END
   and that is the reason LINKED LIST Implementation is recommended
 
-####
+#### Writing our own Stack From Scratch
+
+- Linked List Implementation
+
+- We cannot use existing Linked List `push` and `pop` methods, because `pop`
+  is not CONSTANT TIME (we need to traverse all the way from HEAD to TAIL)
+
+- PUSHING
+
+  - Add a value to the top of the stack!
+
+- PUSING Pseudocode
+  - The function should accept a value.
+  - Create a new node with that value;
+  - If there are no nodes in the stack, set the FIRST and LAST property to be the newly created node.
+  - If there is at least one node, create a variable that stores the current FIRST property on the stack
+  - Reset the FIRST property to be the newly created node
+  - Set the NEXT property on the node to be the previously created variable
+  - Increament the size of the stack by 1
+  - Return the stack size
