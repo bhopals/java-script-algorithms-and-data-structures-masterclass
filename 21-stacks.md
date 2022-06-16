@@ -140,12 +140,32 @@ stack.shift('google');
   - REMOVE a value to the top of the stack!
 
 - POP Pseudocode
+
   - If there are no nodes in the stack return null
   - Create a temporary variable to store the FIRST property on the stack
   - If there is only 1 node, set the FIRST and LAST property to be null
   - If there is more than one node, set the FIRST property to be the NEXT property on the current FIRST
   - Decrement the size by 1
   - Retrun the value of the node removed
+
+- POP Code
+
+```
+pop() {
+    if (this.size === 0) return null;
+    const element = this.first;
+
+    if (this.size === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = element.next;
+    }
+
+    this.size--;
+    return element.value;
+  }
+```
 
 #### Big O Stack
 
@@ -161,3 +181,23 @@ stack.shift('google');
 - Stacks are used to handle function invocations (the call stack), for opertaions like UNDO/REDO,
   for routing (remember pages you have visited and go back/forward) and much more!
 - Stacks are not a build in data structure in JavaScript, but are relatively simple to implement.
+
+#### DEMO
+
+const stack = new Stack(); // first = null, last = null
+
+stack.push(1) // [1] first = 1, first.next = null, last = 1
+stack.push(2) // [1,2] first = 2, fist.next = 1, first.next.next = null, last = 1
+stack.push(3) // [1,2,3] first = 3, first.next = 2, first.next.next= 1, first.next.nex.next= null, last = 1
+stack.push(4) // [1,2,3,4] first = 4, fist.next = 3, first.next.next = 2, first.next.next.next= 1, last = 1
+
+console.log(stack) // first = 4, fist.next = 3, first.next.next = 2, first.next.next.next= 1, last = 1
+
+stack.pop() // 4 first = 3, first.next = 2, first.next.next= 1, first.next.nex.next= null, last = 1
+stack.pop() // 3 first = 2, fist.next = 1, first.next.next = null, last = 1
+stack.pop() // 2 first = 1, first.next = null, last = 1
+stack.pop() // 1 first = null, last = null
+stack.pop() // null first = null, last = null
+
+- REMEMBER that in STACK, the FIRST will be end of the stack from the Items come in and go out.
+- The LAST will always point to the very first inserted item

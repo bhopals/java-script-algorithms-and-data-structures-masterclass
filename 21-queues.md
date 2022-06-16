@@ -157,4 +157,22 @@ class Queue {
 - Queues are a FIFO data structure, all elements are first in and first out
 - Queues are useful for processing tasks and are foundational for more complex data structures
 - Insertion and Removal can be done in `O(1)`
--
+
+#### DEMO
+
+const queue = new Queue();
+
+queue.enqueue(1) // first = 1, first.next = null, last = 1
+queue.enqueue(2) // first = 1, .. last.next.next = 2, last.next.next =1 last = 2
+queue.enqueue(3) // first = 1, first.next = 2 ..... last.next = 2 last = 3
+queue.enqueue(4) // first = 1, first.next = 2 ..... last.next.next = 2, last.next=3, last=4
+queue.enqueue(5) // first = 1, first.next = 2, first.next.next = 3..... last.next.next=3, last.next=4 last = 5
+
+console.log(queue) // first = 1, first.next = 2, first.next.next = 3.....last.next.next=3, last.next=4 last = 5
+
+queue.dequeue() // 1 first = 2, first.next = 3.....last.next.next=3, last.next=4 last = 5
+queue.dequeue() // 2 first = 3, first.next = 4..... last.next=4 last = 5
+queue.dequeue() // 3 first = 4, first.next = 5..... last.next=4 last = 5
+queue.dequeue() // 4 first = 5
+queue.dequeue() // 5 first = null, last = null
+queue.dequeue() // null = first = null, last = null
