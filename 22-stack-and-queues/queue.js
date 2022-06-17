@@ -47,7 +47,6 @@ console.log(queue);
 
 queue.enqueue(333);
 console.log(queue);
-console.log(queue);
 
 queue.dequeue();
 console.log(queue);
