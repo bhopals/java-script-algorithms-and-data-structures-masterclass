@@ -61,3 +61,35 @@
     return data;
   }
   ```
+
+#### DEPTH FIRST SEARCH (DFS)
+
+- In DFS, we traverse node VERTICALLY(Top to Bottom), before visiting Sibling Nodes
+
+- There are 3 Different orders in which we are going to talk about DFS
+
+  - PreOrder - [10, 6, 3, 8, 15, 20]
+  - PostOrder - []
+  - InOrder - []
+
+  ```
+          10
+      6         15
+  3      8          20
+  ```
+
+#### Depth First PreOrder Intro
+
+- PreOrder - [10, 6, 3, 8, 15, 20]
+
+- PreOrder - Visit the NODE ==> Visit the ENTIRE LEFT ==> VISIT THE ENTIRE RIGHT
+
+- In PreOrder, We visit the Node fist, then we look at the entire LEFT side, then we traverse the RIGHT
+
+- DEPTH FIRST SEARCH PreOrder Pseudocode (Steps Recursively Only - Cannot be done Iteratively)
+  - Create a variable [] to store the values of the nodes visited
+  - Store the root of the BST in a vaiable called CURRENT
+  - Write a HELPER function which accepts a node
+    - Push the value of the node to the variable that stores the values
+    - If the node has a left property, call the helper function with the left property of the node
+    - If the node has a right property, call the helper function with the right property of the node
