@@ -132,3 +132,34 @@
   - Every parent node has at most TWO children (0...2)
   - Every node to the LEFT of a Parent Node is always LESS than the Parent
   - Every node to the RIGHT of a Parent Node is always GREATER than the Parent
+
+#### Searching A Binary Search Trees
+
+- RECAP RULES
+  - Two Children at MOST
+  - LEFT - Always LESS than Parent Node
+  - RIGHT - Always GREATER than Parent Node
+
+#### Binary Search Tree Classes
+
+- BinarySearchTree
+
+```
+class BinarySearchTree {
+    constructor(){
+        this.root = null;
+    }
+}
+```
+
+- Node
+
+```
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+```
