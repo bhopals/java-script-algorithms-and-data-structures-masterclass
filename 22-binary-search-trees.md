@@ -222,3 +222,73 @@ insert(value) {
     }
   }
 ```
+
+#### Binary Search Tree (BST): Search/Find/Contains
+
+- Finding a Node in a Binary Search Tree
+
+- SEARCH/FIND/CONTAINS Pseudocode - (Steps - Iteratively or Recursively)
+
+  - Starting at the ROOT
+    - Check if there is a ROOT, if not - We are DONE Searching! - return null/undefined
+    - If there is a ROOT, check if the value of the new NODE is the value we are looking for.
+      - If we FOUND! it, we are done!
+    - If NOT, check to see if the value is GREATER than or less than the value of the root
+    - If it is GREATER
+      - Check to see if there is a node to the RIGHT
+        - If there is, move to that node and REPEAT the steps
+        - If there is NOT, we are DONE searching!
+    - If it is LESS
+      - Check to see if there is a node to the LEFT
+        - If there is, move to that node and REPEAT the steps
+        - If there is NOT, we are DONE searching!
+
+- FIND Code
+- If Found return the NODe
+
+```
+  /*** Find to Return the NODE once Matched */
+find(value) {
+  if (this.root === null) return false;
+
+  let current = this.root;
+  let found = false;
+  while (current && !found) {
+    if (value < current) {
+      current = current.left;
+    } else if (value > current.value) {
+      current = current.right;
+    } else {
+      found = true;
+    }
+  }
+  //NOT Found
+  if (!found) return false;
+
+  return current;
+}
+
+```
+
+- If Found return TRUE, else FALSE
+
+```
+/*** Find to Return the TRUE once Matched */
+contains(value) {
+  if (this.root === null) return false;
+  let current = this.root;
+  let found = false;
+  while (current && !found) {
+    if (value < current) {
+      current = current.left;
+    } else if (value > current.value) {
+      current = current.right;
+    } else {
+      return true;
+    }
+  }
+  return false;
+}
+}
+
+```
