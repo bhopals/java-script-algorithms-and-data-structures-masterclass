@@ -7,6 +7,8 @@
   - Explain the differences between Trees, Binary Trees, and binary search trees (BST)
   - Implement operations on Binary Search Trees (BST)
 
+#### Introduction
+
 - WHAT IS A TREE?
 
   - A data structure that consists of NODES in a PARENT/CHILD relationship
@@ -32,3 +34,14 @@
   - SIBLINGS - A Group of nodes with the same PARENT
   - LEAF - A Node with no CHILDREN on the Tree (The last element - bottom most)
   - EDGE - The connection between one node and another (`ARROW` ===>)
+
+#### Uses For Trees
+
+- TREES Real World Use Cases
+  - HTML DOM
+  - JSON Object Parsing
+  - Network Routing
+  - Abstract Syntax Tree (AST)
+  - Artificial Intelligence (To predict Possible moves in a GAME) - Example: Tic Tac Toe Game
+  - Folders in Operation Systems
+  - Computer Files System
