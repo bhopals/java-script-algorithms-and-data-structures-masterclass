@@ -69,7 +69,7 @@
 - There are 3 Different orders in which we are going to talk about DFS
 
   - PreOrder - [10, 6, 3, 8, 15, 20]
-  - PostOrder - []
+  - PostOrder - [3, 8, 6, 20, 15, 10]
   - InOrder - []
 
   ```
@@ -78,7 +78,7 @@
   3      8          20
   ```
 
-#### Depth First PreOrder Intro
+#### Depth First PreOrder
 
 - PreOrder - [10, 6, 3, 8, 15, 20]
 
@@ -87,9 +87,42 @@
 - In PreOrder, We visit the Node fist, then we look at the entire LEFT side, then we traverse the RIGHT
 
 - DEPTH FIRST SEARCH PreOrder Pseudocode (Steps Recursively Only - Cannot be done Iteratively)
+
   - Create a variable [] to store the values of the nodes visited
   - Store the root of the BST in a vaiable called CURRENT
   - Write a HELPER function which accepts a node
     - Push the value of the node to the variable that stores the values
     - If the node has a left property, call the helper function with the left property of the node
     - If the node has a right property, call the helper function with the right property of the node
+
+- DEPTH FIRST SEARCH (DFS) PreOrder Code
+
+```
+ DFSPreOrder() {
+   let data = [];
+   function traverse(node) {
+     data.push(node.value);
+     if (node.left) traverse(node.left);
+     if (node.right) traverse(node.right);
+   }
+   traverse(this.root);
+   return data;
+ }
+```
+
+#### Depth First PostOrder
+
+- PostOrder - [3, 8, 6, 20, 15, 10]
+- PostOrder - Visit the ENTIRE LEFT ==> Visit the ENTIRE RIGHT ==> VISIT THE NODE
+
+- DEPTH FIRST SEARCH PostOrder Pseudocode (Steps Recursively Only - Cannot be done Iteratively)
+
+  - Create a variable [] to store the values of the nodes visited
+  - Store the root of the BST in a vaiable called CURRENT
+  - Write a HELPER function which accepts a node
+    - If the node has a left property, call the helper function with the left property of the node
+    - If the node has a right property, call the helper function with the right property of the node
+    - Push the valie of the node to the variable that stores the values
+    - Invoke the helper function with the current value
+
+- DEPTH FIRST SEARCH (DFS) PreOrder Code
