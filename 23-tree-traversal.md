@@ -184,3 +184,42 @@
     return data;
   }
 ```
+
+#### When to Use BFS and DFS
+
+- BFS and DFS - Which one is better?
+
+- If the Tree is huge - Lots of nodes to keep track of. In that case, the SPACE Complexity will go up.
+  Hence, BFS is not recommended here.
+
+- On the other hand, if the tree is not wide (Fewer Nodes to keep track of) and just DEEP, that means BFS
+  is the Best Fit as our Queue/Data Storage will not grow much, compared to if we go with DFS
+
+- BST Example
+
+```
+     10
+  6      15
+3   8       20
+```
+
+- DFS - InOrder UseCase
+
+  - [3, 6, 8, 10, 15,20]
+  - InOrder, always returns ordered data (if we use Binary Search Tree with ordered data)
+  - Used Commonly with BST's - Notice we get all nodes in the tree in their underlying ORDER
+
+- DFS - PreOrder UseCase
+
+  - [10, 6, 3, 8, 15, 20] - Exact Replica of the Tree traversed
+  - Can be used to "export" a tree structure so that it is easily reconstructed or copied or cloned.
+
+- DFS - PostOrder UseCase
+
+#### RECAP
+
+- Trees are non-linear data structures that contain a root and child nodes
+- Binary Trees can have values of any type, but at most two children for each parent
+- Binary Search Trees are a more specific version of Binary Trees where every node
+  to the LEFT of a Parent is LESS than it's value and every node to the RIGHT is GREATER
+- We can search through Trees using BFS and DFS
