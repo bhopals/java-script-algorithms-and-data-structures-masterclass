@@ -33,6 +33,7 @@
 ```
 
 - BREADTH FIRST SEARCH (BFS) Pseudocode (Steps - Iteratively)
+
   - Create a QUEUE (this can be ARRAY), and a variable [] to store the values of nodes visited.
   - Place the root node in the Queue
   - Loop as long as there is anything in the Queue
@@ -41,3 +42,22 @@
     - If there is a LEFT property on the node dequeued - add it to the queue
     - If there is a RIGHT property on the node dequeued - add it to the queue
   - Return the variable that stores the values
+
+- BREADTH FIRST SEARCH (BFS) Code
+
+  ```
+  BFS() {
+    var node = this.root,
+      data = [],
+      queue = [];
+    queue.push(node);
+
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
+  ```
