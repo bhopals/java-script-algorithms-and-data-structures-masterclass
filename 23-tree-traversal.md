@@ -70,7 +70,7 @@
 
   - PreOrder - [10, 6, 3, 8, 15, 20]
   - PostOrder - [3, 8, 6, 20, 15, 10]
-  - InOrder - []
+  - InOrder - [3, 6, 8, 10, 15, 20]
 
   ```
           10
@@ -94,6 +94,8 @@
     - Push the value of the node to the variable that stores the values
     - If the node has a left property, call the helper function with the left property of the node
     - If the node has a right property, call the helper function with the right property of the node
+  - Invoke the helper function with the current value
+  - Return variable array []
 
 - DEPTH FIRST SEARCH (DFS) PreOrder Code
 
@@ -122,7 +124,63 @@
   - Write a HELPER function which accepts a node
     - If the node has a left property, call the helper function with the left property of the node
     - If the node has a right property, call the helper function with the right property of the node
-    - Push the valie of the node to the variable that stores the values
-    - Invoke the helper function with the current value
+    - Push the value of the node to the variable that stores the values
+  - Invoke the helper function with the current value
+  - Return variable array []
 
 - DEPTH FIRST SEARCH (DFS) PreOrder Code
+
+```
+  DFSPostOrder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+    traverse(this.root);
+    return data;
+  }
+```
+
+#### Depth First InOrder
+
+- InOrder - [3, 6, 8, 10, 15, 20]
+- InOrder - Visit the ENTIRE LEFT ==> VISIT THE NODE ==> Visit the ENTIRE RIGHT
+
+- DEPTH FIRST SEARCH InOrder Pseudocode (Steps Recursively Only - Cannot be done Iteratively)
+
+  - Create a variable [] to store the values of the nodes visited
+  - Store the root of the BST in a vaiable called CURRENT
+  - Write a HELPER function which accepts a node
+    - If the node has a left property, call the helper function with the left property of the node
+    - Push the valie of the node to the variable that stores the values
+    - If the node has a right property, call the helper function with the right property of the node
+  - Invoke the helper function with the current value
+  - Return variable array []
+
+- DEPTH FIRST SEARCH (DFS) PreOrder Code
+
+```
+  DFSInOrder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+  // Replace IF with && condition
+  DFSInOrder_() {
+    let data = [];
+    function traverse(node) {
+      node.left && traverse(node.left);
+      data.push(node.value);
+      node.right && traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+```
