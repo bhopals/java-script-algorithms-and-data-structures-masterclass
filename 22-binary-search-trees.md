@@ -292,3 +292,13 @@ contains(value) {
 }
 
 ```
+
+#### Big O of Binary Search Tree (BST)
+
+- TIME COMPLEXITY
+
+  - BEST CASE SCENARIOS
+    - INSERTION - `O(log n)`
+    - SEARCHING - `O(log n)`
+
+- Best Case, not always guaranteed :(
