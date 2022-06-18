@@ -136,9 +136,18 @@
 #### Searching A Binary Search Trees
 
 - RECAP RULES
+
   - Two Children at MOST
   - LEFT - Always LESS than Parent Node
   - RIGHT - Always GREATER than Parent Node
+
+- Example:
+
+```
+      10
+  5       13
+2  7   11   16
+```
 
 #### Binary Search Tree (BST) Classes
 
@@ -169,6 +178,7 @@ class Node {
 - Inserting a Node in a Binary Tree
 
 - INSERT Pseudocode (Steps - ITERATIVELY or RECURSIVELY)
+
   - Create a new Node
   - Strating at the ROOT
     - Check if there is a ROOT, IF NOT - The Root noew becomes the new node!
@@ -181,3 +191,34 @@ class Node {
     - Check to see if there is a node to the LEFT
       - If there is, move to that node and repeat these steps
       - If there is not, add that node as the LEFT property
+
+- INSERT Code
+
+```
+insert(value) {
+    const newNode = new Node(value);
+    if (!this.root) {
+      this.root = newNode;
+      return this;
+    }
+
+    // ELSE Case
+    let current = this.root;
+    while (true) {
+      if (value === current.value) return undefined; // Handle Duplicates
+      if (value < current.value) {
+        if (current.left === null) {
+          current.left = newNode;
+          return this;
+        }
+        current = current.left;
+      } else if (value > current.value) {
+        if (current.right === null) {
+          current.right = newNode;
+          return this;
+        }
+        current = current.right;
+      }
+    }
+  }
+```
