@@ -140,7 +140,7 @@
   - LEFT - Always LESS than Parent Node
   - RIGHT - Always GREATER than Parent Node
 
-#### Binary Search Tree Classes
+#### Binary Search Tree (BST) Classes
 
 - BinarySearchTree
 
@@ -163,3 +163,21 @@ class Node {
     }
 }
 ```
+
+#### Binary Search Tree (BST): Insert
+
+- Inserting a Node in a Binary Tree
+
+- INSERT Pseudocode (Steps - ITERATIVELY or RECURSIVELY)
+  - Create a new Node
+  - Strating at the ROOT
+    - Check if there is a ROOT, IF NOT - The Root noew becomes the new node!
+    - If there is a ROOT, check if the value of the new node is GREATER than or LESS than the value of the ROOT
+    - If it is GREATER
+      - Check to see if there is a node to the RIGHT
+        - If there is, move to that node and repeat these steps
+        - If there is not, add that node as the RIGHT property
+  - If it is LESS
+    - Check to see if there is a node to the LEFT
+      - If there is, move to that node and repeat these steps
+      - If there is not, add that node as the LEFT property
