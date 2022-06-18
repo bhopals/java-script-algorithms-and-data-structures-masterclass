@@ -45,3 +45,90 @@
   - Artificial Intelligence (To predict Possible moves in a GAME) - Example: Tic Tac Toe Game
   - Folders in Operation Systems
   - Computer Files System
+
+#### Intro To Binary Trees
+
+- KIND/TYPES OF TREES
+
+  - BINARY TREES
+
+    - AA Tree
+    - AVL Tree
+    - Binary Search Tree
+    - Pagoda
+    - T-tree
+    - Treap
+    - etc. (A huge List...)
+
+  - B-TREES
+
+    - B-tree
+    - B+tree
+    - B+-tree
+    - B Sharp Tree
+    - Dancing Tree
+    - 2-3 Tree
+    - 2-3-4 Tree
+    - etc. (A huge List...)
+
+  - HEAP
+
+    - Heap
+    - Binary Heap
+    - B-Heap
+    - Weak Heap
+    - Binomial Heap
+    - AF Heap
+    - Leonardo Heap
+    - Treap
+    - Beap
+    - etc. (A huge List...)
+
+  - TREES
+
+    - Trie
+    - Radix Tree
+    - Suffix Tree
+    - FM-index
+    - X-fast Trie
+    - Y-fast Trie
+    - etc. (A huge List...)
+
+  - MULTIWAY TREE
+
+    - Ternary tree
+    - K-ary tree
+    - And-or tree
+    - (a,b)-tree
+    - Link/cut tree
+    - etc. (A huge List...)
+
+  - SPACE-PARTITIONING TREES
+    - Segment tree
+    - Interval tree
+    - Range tree
+    - Bin
+    - K-d tree
+    - Quadtree
+    - Octree
+    - Z-order
+    - UB-tree
+    - etc. (A huge List...)
+
+- TOPICS WE FOCUS ON
+
+  - TREES
+    - In a Tree, EACH NODE can have 0...N Children
+  - BINARY TREES
+    - In Binary Tree, EACH NODE can have 0..2 Children (MAX 2)
+  - BINARY SEARCH TREES
+    - In Binary SEARCH Tree, EACH NODE can have 0..2 Children (MAX 2)
+    - Binary Search Trees are used to store data that can be COMPARED and that is SORTABLE
+    - It is SORTED in a Particular Way
+      - Left Side of the NODE will have the Number/Value that is LESS than PARENT NODE
+      - Right Side of the NODE will have the Number/Value that is GREATER than PARENT NODE
+
+- HOW BINARY SEARCH TREE (BST) WORKS
+  - Every parent node has at most TWO children (0...2)
+  - Every node to the LEFT of a Parent Node is always LESS than the Parent
+  - Every node to the RIGHT of a Parent Node is always GREATER than the Parent
