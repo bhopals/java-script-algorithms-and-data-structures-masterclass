@@ -108,7 +108,7 @@
              9   15    6   11    13   8     1   4
        ```
 
-[100, 19, 36, 17, 12, 25, 5, 9, 15, 6, 11, 13, 8, 1, 4]
+[100,19,36,17,12,25,5,9,15,6,11,13,8,1,4]
 
 - FIND A CHILD OF ANY PARENT
 
@@ -129,3 +129,78 @@
       - Parent of `4` (INDEX=14) and `1`(INDEX=13)
       - `Math.floor((14-1)/2)` ==> 6th Index
       - `Math.floor((13-1)/2)` ==> 6th Index
+
+#### Binary Heap: Insert Intro - Max Binary Heap
+
+- Adding to a Max Binary Heap
+
+  - ADD to the END (Push at the end of the array)
+  - Bubble UP (Keep Swaping with other nodes until it finds the right spot)
+
+    - Remember the Rule - The Parent Node should be greater than the Child Nodes
+
+  - EXAMPLE
+
+    - This is the Existing Max Binary Heap
+
+    ```
+               41
+        39           33
+    18     27    12
+
+    ```
+
+    const maxArray = [41,39,33,18,27,12]
+
+    - Suppose you want to ADD 55
+
+      - 1. Add at the end of the ARRAY - `maxArray.push(55)`
+
+           ```
+                       41
+                   39           33
+               18     27    12     55
+
+           ```
+
+           [41,39,33,18,27,12,55]
+
+      - 2. Bubble up to find the right SPOT for 55 (so Parent Node is Greater than the Child)
+
+        - Take the Node value and compare it with Parent (55 > 33), If Node is greater than Parent, SWAP
+
+        ```
+                      41
+                  39           55
+              18     27    12     33
+
+        ```
+
+        [41,39,55,18,27,12,33]
+
+        - Take the Node value and compare it with Parent (55 > 41), If Node is greater than Parent, SWAP
+
+        ```
+                      55
+                  39           44
+              18     27    12     33
+
+        ```
+
+        [55,39,41,18,27,12,33]
+
+- Just Remeber TWO Formulas
+
+  - Find Parent = `Math.floor((n+1)/2)`
+  - Find Child = `2N+1` - (Left Child), `2n+2` - Right Child
+
+- BINARY HEAP INSERT Psuedocode
+  - Push the value into the values property on the HEAP
+  - Bubble the value up to its correct spot!
+    - Create a variable called INDEX which is the Length of the values property-1
+    - Create a variable called parentIndex which is the floor on (index-1)/2
+    - Keep Looping as long as the values element at the parentIndex is less that the values
+      element at the child index
+      - Swap the value of the values element at the parent indexz with the value of the element
+        property at the child index
+      - Set the index to be the parentIndex, and start over!
