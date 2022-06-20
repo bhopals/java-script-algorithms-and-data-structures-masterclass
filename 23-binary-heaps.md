@@ -93,3 +93,39 @@
 
 - WHY DO WE NEED TO KNOW THIS?
   - Binary Heaps are used to implement Priority Queues, which are very commonly used data structures.
+  - They are also used quite a bit with GRAPH TRAVERSAL Algorithms
+
+#### Storing Heaps
+
+- There is an EASY way of storing a Binary HEAP.... - A LIST/AN ARRAY
+
+- An Max Binary Heap Example - Stored in ARRAY
+
+        ```
+                            100
+                    19                  36
+               17        12        25         5
+             9   15    6   11    13   8     1   4
+       ```
+
+[100, 19, 36, 17, 12, 25, 5, 9, 15, 6, 11, 13, 8, 1, 4]
+
+- FIND A CHILD OF ANY PARENT
+
+  - Solution: (To find Child of any Parent)
+    - For any (Parent) INDEX of an ARRAY `n`...
+    - The Left CHILD is STORED at `2n+1`
+    - The Right CHILD is STORED at `2n+2`
+    - Example
+      - If Parent Index is 5:
+      - Left Child would be at `(2*5)+1` ==> 11th Index
+      - Right Child would be at `(2*5)+2` ==> 12th Index
+
+- WHAT IF WE HAVE A CHILD NODE AND WANT TO FIND ITS PARENT?
+  - Solution: (To find Parent of any Child)
+    - For any CHILD Node at INDEX `n`...
+    - Its parent is at INDEX `Math.floor((n-1)/2)`
+    - Example (From the above Example)
+      - Parent of `4` (INDEX=14) and `1`(INDEX=13)
+      - `Math.floor((14-1)/2)` ==> 6th Index
+      - `Math.floor((13-1)/2)` ==> 6th Index
