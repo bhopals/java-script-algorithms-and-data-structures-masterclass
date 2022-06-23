@@ -204,3 +204,23 @@
       - Swap the value of the values element at the parent indexz with the value of the element
         property at the child index
       - Set the index to be the parentIndex, and start over!
+
+```
+   insert(value) {
+    this.values.push(value);
+    this.bubbleUp();
+  }
+
+  bubbleUp() {
+    let idx = this.values.length - 1;
+    const element = this.values[idx];
+    while (idx > 0) {
+      const pIndex = Math.floor((idx - 1) / 2);
+      const pValue = this.values[pIndex];
+      if (element <= pValue) break;
+      this.values[pIndex] = element;
+      this.values[idx] = pValue;
+      idx = pIndex;
+    }
+  }
+```
