@@ -224,3 +224,150 @@
     }
   }
 ```
+
+#### Heap: ExtractMax Intro
+
+- Removing from a HEAP
+
+  - Remove in Heap Binary Tree means removing the top most item (First element of the Array -
+    Which is Max as well)
+
+  - Remove the Root
+  - Replace with the most recently added (length - 1)
+  - Adjust (`Sink Down`)
+    - `Sink Down`
+      - The procedure for deleting the ROOT from the heap (effectively extracting the maximum element in
+        a max-heap or the minimum element in a min-heap) and restoring the properties is called DOWN-HEAP.
+        Also known as `Bubble-down`, `Percolate-down`, `sift-down`, `trickle down`, `heapify-down`,
+        `cascade down`, and `extract-min/max`.
+
+- Kind of Remove and SWAP
+
+- Example: [`41`, 39, 33, 18, 27, 12]
+
+  ```
+           41
+      39          33
+  18     27    12
+
+  ```
+
+  - Extract Max (Remove the Root element)
+
+    ```
+              _
+        39          33
+    18     27    12
+
+    ```
+
+    - Swap it with the last element of the NODE (Since that is the min. value we will have in TREE)
+
+    ```
+              12
+        39          33
+    18     27
+
+    ```
+
+    - Start SINK DOWN
+
+      - Compare it (12) with its both of the children (39, 33), take whatever is larger
+
+      ```
+                    `12`
+              `39`           33
+           18     27
+
+      ```
+
+      - Swap with that value (Swap 39 with 12)
+
+      ```
+               `39`
+          `12`          33
+       18     27
+      ```
+
+    - Now Compare again till Either 12 is at the end of the node, or both of the CHILDREN are less than 12
+
+    ```
+              39
+         `12`          33
+      18     `27`
+    ```
+
+    (12 < 27 ==> SWAP)
+
+    ```
+             39
+        `27`          33
+     18     `12`
+    ```
+
+    - Now 12 Does not have any childer (Or in case any, both should be less than that)
+    - and We are DONE!!!!
+
+#### Heap: ExtractMax - Pseudocode
+
+- Also called extractMax
+- Swap the first value in the values property with the last one
+- Pop from the values property, so you can return the value at the end. (`array.pop`)
+- Have the new root "sink down" to the correct spot?
+
+  - Your parent index starts at o (the root)
+  - Find the Index of the LEFT child (`2*index + 1`) - Make sure it is not out of index out of bounds.
+  - Find the Index of the RIGHT child (`2*index + 2`) - Make sure it is not out of index out of bounds.
+  - If the LEFT or RIGHT child is greater than the element...SWAP.
+  - If both LEFT and RIGHT children are larger, swap with the LARGEST child.
+  - The Child index you swapped to now becomes the new parent index
+  - Keep looping and swapping until neither child is larger than the element.
+  - Return the old root!
+
+- Binary Heap extractMax Code:
+
+```
+extractMax() {
+    const max = this.values[0];
+    const end = this.values.pop();
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return max;
+  }
+
+  sinkDown() {
+    let idx = 0;
+    let element = this.values[0];
+    let length = this.values.length;
+    while (true) {
+      let leftChildIndex = 2 * idx + 1;
+      let rightChildIndex = 2 * idx + 2;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if (leftChildIndex < length) {
+        leftChild = this.values[leftChildIndex];
+        if (leftChild > element) {
+          swap = leftChildIndex;
+        }
+      }
+
+      if (rightChildIndex < length) {
+        rightChild = this.values[rightChildIndex];
+        if (
+          (swap === null && rightChild > element) ||
+          (swap !== null && rightChild > leftChild)
+        ) {
+          swap = rightChildIndex;
+        }
+      }
+
+      if (swap === null) break;
+      this.values[idx] = this.values[swap];
+      this.values[swap] = element;
+      idx = swap;
+    }
+  }
+```
