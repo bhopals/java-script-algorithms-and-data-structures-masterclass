@@ -26,5 +26,6 @@ class MaxBinaryHeap {
 }
 
 const binaryHeap = new MaxBinaryHeap(maxBinaryHeap);
+console.log(binaryHeap);
 binaryHeap.insert(55);
 console.log(binaryHeap);
