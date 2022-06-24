@@ -1,5 +1,11 @@
 ### Hash Tables
 
+- Store Keys and Values
+- Examples
+  - Javascript Objects and Maps
+
+#### Hash Tables: Intro
+
 - OBJECTIVES
 
   - Explain what a HASH TABLE is
@@ -30,4 +36,9 @@
   - RUBY - Maps
   - PHYTON - Dictionaries
 
-- HOWEVER, we are going to use our OWN HASH TABLE Implementation
+- HOWEVER, we are going to use our OWN HASH TABLE Implementation (Reinvent the WHEEL :D. Its FUN!!)
+
+- THE HASH PART
+  - To implement a HASH TABLE, we will be using an ARRAY
+  - In order to look up values by key, we need a way to CONVERT KEYS INTO VALID ARRAY INDICES
+  - A Function that performs this task is called HASH Function.
