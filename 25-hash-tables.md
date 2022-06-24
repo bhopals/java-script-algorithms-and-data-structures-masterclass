@@ -74,6 +74,31 @@
   ```
 
 - REFINING OUR HASH (Problem with our Current Hash)
+
   - Only Hashes STRINGS
-  - Not Constant time - Linear in key length
-  - Could be littler more Random
+  - Not Constant time (Becase we are looping around) - Linear in key length
+  - Could be littler more Random (Because we are using Fixed Calculation - `char.codeAt(0) - 96`)
+
+- REFINED EXAMPLE
+
+  ```
+  function hash(key, arrayLen) {
+      let total = 0;
+      let WEIRED_PRIME = 31; //PRIME NUMBERS
+      for (let i = 0; i < Math.min(key.length, 100); i++) {
+          let char = key[i];
+          let value = char.charCodeAt(0) - 96;
+          total = (total * WEIRED_PRIME + value) % arrayLen;
+      }
+      return total;
+  }
+
+  hash("pink", 10); // 0
+  hash("orangered", 10); // 7
+  hash("cyan", 10); // 3
+
+  ```
+
+- NOW YOU MIGHT WONDER, WHY PRIME NUMBERS NOT Non-PRIME numbers?
+  - The Prime number in the HASH is helpful in SPREADING out the keys UNIFORMLY
+  - It is also helpful if the array that you are putting values into has a PRIME LENGTH
