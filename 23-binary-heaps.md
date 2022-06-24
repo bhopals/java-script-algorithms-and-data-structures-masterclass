@@ -371,3 +371,25 @@ extractMax() {
     }
   }
 ```
+
+#### Priority Queue Intro
+
+- Building a Priority Queue
+
+- WHAT IS A PRIORITY QUEUE
+
+  - A data structure where each element has a priority.
+  - Elements with higher priorities are served before elements with lower priorities.
+
+- PRIORITY QUEUE is an ABSTRACT Concept and can be implemented using any means (Array, LinkedList, etc...)
+
+  - 1.  A NAIVE VERSION
+
+    - Use a list (ARRAY) to store all elements
+      - `[ priority:3 priority:1 priority:2 priority:5 priority:4]` - Lowest Number is the HIGHEST Priority
+    - Iterate over the entire thing to find the highest priority element.
+
+  - BINARY HEAP TREE (Using Array)
+    - Highest Priority always at the TOP/ROOT
+    - Add ==> Insert && Bubble Up
+    - Remove ==> Remove && Sink Down
