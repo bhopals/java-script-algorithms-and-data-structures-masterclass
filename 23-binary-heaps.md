@@ -391,5 +391,32 @@ extractMax() {
 
   - BINARY HEAP TREE (Using Array)
     - Highest Priority always at the TOP/ROOT
-    - Add ==> Insert && Bubble Up
-    - Remove ==> Remove && Sink Down
+    - Add ==> Push && Bubble Up
+    - Remove ==> Pop && Sink Down
+
+- The PRIORITY QUEUE is going to be MIN BINARY HEAP (Lowest number === highest priority should be on the TOP)
+
+#### Priority Queue Pseudocode
+
+- The Class Name Details (Structure)
+
+  ```
+     className: PriorityQueue
+     properties: values = []
+
+     className: Node
+     properties: val, priority
+  ```
+
+- So instead of just having a Value (number) as we used in the last few examples, here we would have
+  a `NODE` class with `value` and `priority`. We will not use VALUE, we would only be relying on the PRIORITY
+  in our ADD (Push and Bubble Up) and REMOVE (Pop and Sink Down) Operations
+- That means the VALUE doesn't matter. Heap is constructed using PRIORITY.
+- The PRIORITY QUEUE is going to be MIN BINARY HEAP (Lowest number === highest priority should be on the TOP)
+
+- OUR PRIORITY QUEUE
+  - Write a Min BINARY HEAP - Lower number means HIGHER Priority
+  - Each Node has a VALUE and a PRIORITY. Use the PRIORITY to build the HEAP
+  - ENQUEUE method accepts a VALUE and a PRIORITY, makes a new NODE, and puts it in the right
+    spot based off of its priority (Push and Bubble Up)
+  - DEQUEUE method removes root element, returs it, and rearranges heap using PRIORITY.
