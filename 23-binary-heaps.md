@@ -503,3 +503,19 @@ ER.enqueue("broken arm", 2);
 ER.enqueue("glass in foot", 3);
 
 ```
+
+#### Big O of Binary Heaps
+
+- TIME COMPLEXITY
+  - INSERTION - `O(log N)`
+  - REMOVAL - `O(log N)`
+  - SEARCH - `O(N)`
+
+#### RECAP
+
+- Binary Heaps are very useful data structures for sorting, and implementing other data structures
+  like priority queues.
+- Binary Heaps are either MaxBinaryHeaps or MinBinaryHeaps with parents either being SMALLER or
+  LARGER than their children.
+- With just a little bit of math (finding child - 2n+1, 2n+2 and parent - (n-1)/2 in array),
+  we can represent heaps using ararys!
