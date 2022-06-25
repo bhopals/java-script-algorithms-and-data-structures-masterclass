@@ -202,6 +202,9 @@
 
   ```
 
+- Example HASH TABLE Storage - ARRAYs withing the ARRAY
+  [[[],[]], [[],[],[],[]],[], [], [[],[],[],[]]]
+
 #### HASH Table Keys and Values
 
 - KEY
@@ -245,3 +248,10 @@
   ```
 
 - The DUPLICATE KEY should override the existing VALUES
+
+#### BIG O of HASH TABLES (Average Case)
+
+- TIME COMPLEXITY
+  - INSERT: O(1)
+  - DELETION: O(1)
+  - ACCESS: O(1)
