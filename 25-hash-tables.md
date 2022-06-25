@@ -201,3 +201,47 @@
   }
 
   ```
+
+#### HASH Table Keys and Values
+
+- KEY
+
+  - Loops through the hash table array and returns an array of VALUESs in the table
+
+  ```
+  keys() {
+    let keysArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          //To get unique keys
+          if (!keysArr.includes(this.keyMap[i][j][0])) {
+            keysArr.push(this.keyMap[i][j][0]);
+          }
+        }
+      }
+    }
+    return keysArr;
+  }
+  ```
+
+- VALUES
+
+  - Loops through the hash table array and returns an array of VALUES in the table
+
+  ```
+  values() {
+    let valuesArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          //To get unique values
+          if (!valuesArr.includes(this.keyMap[i][j][1])) {
+            valuesArr.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+  ```
+
+- The DUPLICATE KEY should override the existing VALUES
