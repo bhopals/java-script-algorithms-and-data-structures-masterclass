@@ -217,7 +217,7 @@
     for (let i = 0; i < this.keyMap.length; i++) {
       if (this.keyMap[i]) {
         for (let j = 0; j < this.keyMap[i].length; j++) {
-          //To get unique keys
+          // To get unique keys
           if (!keysArr.includes(this.keyMap[i][j][0])) {
             keysArr.push(this.keyMap[i][j][0]);
           }
@@ -238,7 +238,7 @@
     for (let i = 0; i < this.keyMap.length; i++) {
       if (this.keyMap[i]) {
         for (let j = 0; j < this.keyMap[i].length; j++) {
-          //To get unique values
+          // To get unique values
           if (!valuesArr.includes(this.keyMap[i][j][1])) {
             valuesArr.push(this.keyMap[i][j][1]);
           }
