@@ -102,3 +102,31 @@
 - NOW YOU MIGHT WONDER, WHY PRIME NUMBERS NOT Non-PRIME numbers?
   - The Prime number in the HASH is helpful in SPREADING out the keys UNIFORMLY
   - It is also helpful if the array that you are putting values into has a PRIME LENGTH
+
+#### Handling Hashing Collisions
+
+- COLLISIONS - Same HASH value is returned for two different values
+
+- DEALING WITH COLLISIONS
+
+  - Even with a Large Array and a great HASH Function, Collisions are INEVITABLE
+  - There are many strategies for dealing with Collisions, but we will focus on TWO:
+    - Separate Chaining
+    - Linear Probing
+
+- SEPARATE CHAINING
+
+  - With Separate Chaining, at each index in our ARRAY we store values using a more sophisticated data
+    structure (e.g. an ARRAY or a LINKED LIST)
+  - This allows us to STORE multiple KEY-VALUE Pairs at the same index.
+  - EXAMPLE:
+    - If collision occurs at any index, we store those in ARRAY or LINKED LIST at that same index
+
+- LINEAR PROBING
+
+  - With Linear Probing, when we find a collision, we search through the array to find the next empty slot
+    unlike with Separate Chaining, this allows us to store a single KEY-VALUE at each index.
+  - EXAMPLE:
+    - If collision occurs at any index, we store those in ARRAY or LINKED LIST at the very next available index
+
+- SEPARATE CHAINING is RECOMMENDED as we can store more data
