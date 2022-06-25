@@ -130,3 +130,23 @@
     - If collision occurs at any index, we store those in ARRAY or LINKED LIST at the very next available index
 
 - SEPARATE CHAINING is RECOMMENDED as we can store more data
+
+#### Hash Table Set and Get: Psuedocode
+
+- SET Psuedocode
+
+  - Accepts a KEY and a VALUE
+  - Hashes the KEY
+  - Stores the key-value Pairs in the hash table array via SEPARATE CHAINING
+    - Check if the any existing value is already stored on that hash location
+      - If it is, push your KEY-VALUE pair `['key', 'value']` on to the ARRAY
+      - If not, create an EMPTY Array Item `[]`, and push your KEY-VALUE pair to that `[['key', 'value']]`
+
+- GET Psuedocode
+  - Accepts a KEY
+  - Hashes the KEY
+  - Retrieves the key-value pair in the HASH Table
+    - Go to the HASH position in the hash table, and retrieve the element
+      - If that position has single element, return that one
+      - If multiple elements, find the right one using KEY and return it
+  - If the KEY is not found, returns `UNDEFINED`
