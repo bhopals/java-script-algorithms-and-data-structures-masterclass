@@ -255,3 +255,13 @@
   - INSERT: O(1)
   - DELETION: O(1)
   - ACCESS: O(1)
+
+#### RECAP
+
+- Hash tables are collections of KEY-VALUE Pairs
+- Hash Tables can find values quickly give a KEY
+- Hash tables can add a new key-values quickly
+- Hash tables store data in a large array, work by hashing the keys
+- A good HASH should be fast, distribute keys uniformly, and be deterministic
+- Separate Chaining and Linear Probing are two strategies used to deal with two keys that
+  hash to the same INDEX.
