@@ -131,6 +131,27 @@
 
 - SEPARATE CHAINING is RECOMMENDED as we can store more data
 
+- HASH TABLE Hash Function
+
+```
+ class HashTable {
+  constructor(size=53){
+    this.keyMap = new Array(size);
+  }
+
+ _hash(key) {
+    let total = 0;
+    let WEIRD_PRIME = 31;
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+      let char = key[i];
+      let value = char.charCodeAt(0) - 96
+      total = (total * WEIRD_PRIME + value) % this.keyMap.length;
+    }
+    return total;
+  }
+}
+```
+
 #### Hash Table Set and Get: Psuedocode
 
 - SET Psuedocode
@@ -142,7 +163,20 @@
       - If it is, push your KEY-VALUE pair `['key', 'value']` on to the ARRAY
       - If not, create an EMPTY Array Item `[]`, and push your KEY-VALUE pair to that `[['key', 'value']]`
 
+- SET Code Example
+
+  ```
+    set(key, value) {
+        let index = this._hash(key);
+        if (!this.keyMap[index]) {
+        this.keyMap[index] = [];
+        }
+        this.keyMap[index].push([key, value]);
+    }
+  ```
+
 - GET Psuedocode
+
   - Accepts a KEY
   - Hashes the KEY
   - Retrieves the key-value pair in the HASH Table
@@ -150,3 +184,20 @@
       - If that position has single element, return that one
       - If multiple elements, find the right one using KEY and return it
   - If the KEY is not found, returns `UNDEFINED`
+
+- GET Code Example
+
+  ```
+  get(key){
+    let index = this._hash(key);
+    if(this.keyMap[index]){
+      for(let i = 0; i < this.keyMap[index].length; i++){
+        if(this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i][1]
+        }
+      }
+    }
+    return undefined;
+  }
+
+  ```
