@@ -106,6 +106,7 @@
   ```
 
 - DEPTH FIRST TRAVERSAL (Recursive)
+
   - The function should accept a STARTING NODE
   - Create a List (RESULT ARRAY) to Store the End result, to be returned at the very end.
   - Create an Object to store Visited Vertices
@@ -118,3 +119,36 @@
       function with that vertex.
   - Invoke the helper Function with the starting VERTEX.
   - Return the RESULT Array.
+
+    ```
+        depthFirstRecursive(vertex) {
+            const result = [];
+            const visited = {};
+            const adjacencyList = this.adjacencyList;
+            function traverse(vertex) {
+                if (vertex.length === 0) return null;
+                result.push(vertex);
+                visited[vertex] = true;
+                adjacencyList[vertex].forEach((child) => {
+                    if (!visited[child]) traverse(child);
+                });
+            }
+            traverse(vertex);
+            return result;
+        }
+
+        depthFirstRecursiveIIFE(vertex) {
+            const result = [];
+            const visited = {};
+            const adjacencyList = this.adjacencyList;
+            (function dfs(vertex) {
+                if (vertex.length === 0) return null;
+                result.push(vertex);
+                visited[vertex] = true;
+                adjacencyList[vertex].forEach((child) => {
+                    if (!visited[child]) dfs(child);
+                });
+            })(vertex);
+            return result;
+        }
+    ```
