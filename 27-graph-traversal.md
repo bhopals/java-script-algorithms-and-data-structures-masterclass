@@ -224,6 +224,7 @@
 - ARRAY as QUEUE = First In (ARRAY.PUSH), First Out (ARRAY.SHIFT)
 
 - BREADTH FIRST Pseudocode
+
   - This function should accept a STARTING VERTEX
   - Create a Queue (You can use an ARRAY) and place the starting VERTEX in it.
   - Create an ARRAY to store the end RESULT (Array), to be returned at the very end
@@ -234,3 +235,54 @@
   - LOOP over each vertex in the adjacencyList for the vertex you are visiting
   - If it is not inside the Object that stores the nodes visited, Mark it as visited and Enqueue that VERTEX
   - Once you have finished LOOPING, return the array of visited nodes.
+
+- BREADTH First Search Code - Left To Right
+
+  ```
+  breadthFirstLeftToRight(start) {
+      const queue = [start];
+      const result = [];
+      const visited = {};
+
+      visited[start] = true;
+      while (queue.length) {
+      const currentVertex = queue.shift();
+      result.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+          if (!visited[neighbor]) {
+          queue.push(neighbor);
+          visited[neighbor] = true;
+          }
+      });
+      }
+      return result;
+  }
+
+
+  ```
+
+- BREADTH FIRST Search - Right To Left
+
+  ```
+      breadthFirstRightToLeft(start) {
+          const queue = [start];
+          const result = [];
+          const visited = {};
+
+          visited[start] = true;
+          while (queue.length) {
+          const currentVertex = queue.shift();
+          result.push(currentVertex);
+          this.adjacencyList[currentVertex]
+              .slice()
+              .reverse()
+              .forEach((neighbor) => {
+              if (!visited[neighbor]) {
+                  queue.push(neighbor);
+                  visited[neighbor] = true;
+              }
+              });
+          }
+          return result;
+      }
+  ```
