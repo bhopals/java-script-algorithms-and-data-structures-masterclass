@@ -95,3 +95,32 @@
   - Undirected Weighted Graph
   - Directed Unweighted Graph
   - Directed Weighted Graph
+
+#### Storing Graphs: Adjacency Matrix
+
+- MATRIX
+
+  - A Matrix is a Two Dimensional Structure, usually implemented with Nested Arrays (But not always)
+  - Basically, we store information in Rows and Columns
+
+- REPRESENTING A GRAPH
+
+  - ADJACENCY MATRIX
+
+    - A Adjacency Matrix is a Square Matrix used to represent a finite graph. The Elements of the
+      matrix indicate whether pairs of vertices are adjacent or not in the graph.
+
+    - We store information in Rows and Columns
+    - Example
+
+      - GRAPH : -- A --- B --- C --- D --- E --- F -- (`*F is connected back to A, just can't show here so`)
+      - Now the Adjacency Matrix of this would look like:
+        A B C D E F
+        A 0 1 0 0 0 1
+        B 1 0 1 0 0 0
+        C 0 1 0 1 0 0
+        D 0 0 1 0 1 0
+        E 0 0 0 1 0 1
+        F 1 0 0 0 1 0
+
+      - Here `1` represent a Connection between the NODES, `0` represent No Connection
