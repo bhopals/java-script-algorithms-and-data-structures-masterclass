@@ -167,4 +167,4 @@ console.log(g.breadthFirstRightToLeft("A")); // [ 'A', 'B', 'C', 'D', 'E', 'F' ]
 //       D --- E
 //        \   /
 //          F
-// console.log(g);
+console.log(g);
