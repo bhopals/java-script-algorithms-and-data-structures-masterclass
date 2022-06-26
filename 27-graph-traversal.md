@@ -44,6 +44,8 @@
 
 - DFS (Recursive Search) Logic
 
+- ARRAY as STACK = First In (ARRAY.PUSH), Last Out (ARRAY.POP)
+
   - DFS(Vertex):
     - IF Vertex is EMPTY
       - return (this is BASE CASE - To end Recursive CALL) // BASE CASE
@@ -204,3 +206,31 @@
     return result;
   }
   ```
+
+  #### Breadth First Graph Traversal
+
+- BREADTH FIRST
+
+  - Visit Neighbors at CURRENT DEPTH First.
+
+- Breadth First Prioritizes visiting all of the neighbors at a given depth before moving Downwards.
+- Basically traverse Horizental (Left to Right)
+
+#### BREADTH FIRST Intro
+
+- It is very similar to what we did for depth first search, except we actually use a different data structure
+- Rather than using a STACK, we use a QUEUE, but I am just going to use ARRAY, which we did for the STACK
+
+- ARRAY as QUEUE = First In (ARRAY.PUSH), First Out (ARRAY.SHIFT)
+
+- BREADTH FIRST Pseudocode
+  - This function should accept a STARTING VERTEX
+  - Create a Queue (You can use an ARRAY) and place the starting VERTEX in it.
+  - Create an ARRAY to store the end RESULT (Array), to be returned at the very end
+  - Create an Object to store nodes Visited
+  - Mark the starting Vertex as Visited
+  - LOOP as long as there is anything in the QUEUE
+  - Remove the First Vertex from the QUEUE and PUSH it into the array that stores the NODES Visited
+  - LOOP over each vertex in the adjacencyList for the vertex you are visiting
+  - If it is not inside the Object that stores the nodes visited, Mark it as visited and Enqueue that VERTEX
+  - Once you have finished LOOPING, return the array of visited nodes.
