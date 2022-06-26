@@ -124,3 +124,44 @@
         F 1 0 0 0 1 0
 
       - Here `1` represent a Connection between the NODES, `0` represent No Connection
+
+#### Storing Graphs: Adjacency List
+
+- We use an ARRAY or LIST to store the Edges.
+
+- EXAMPLE
+
+  - GRAPH: -- 0 --- 1 --- 2 --- 3 --- 4 --- 5 -- (`*5 is connected back to 0, just can't show here so`)
+  - Now the Adjacency List of this would look like: (0-5 is Index Representation)
+
+    ```
+    [
+    0    [1,5],
+    1    [0,2],
+    2    [1,3],
+    3    [2,4],
+    4    [3,5],
+    5    [4,0]
+    ]
+    ```
+
+  - For example, if I want to check if there is any relationship between `1` and `5`, I would
+    go to Index 1 ([0,2]), and Index 5 ([4,0]), and look if they have relations (Which is not in this case)
+
+  - But what if our Nodes are not in Numbers or not Ordered, in that case, it will be not easy to
+    check the indexes and values.
+
+  - Well in that case we will use HASH TABLE
+  - EXAMPLE
+    - GRAPH: -- A --- B --- C --- D --- E --- F -- (`*F is connected back to A, just can't show here so`)
+    - Now the Adjacency List of this would look like:
+      ```
+      {
+        A: ["B", "F"],
+        B: ["A", "C"],
+        C: ["B", "D"],
+        D: ["C", "E"],
+        E: ["D", "F"],
+        F: ["E", "A"]
+      }
+      ```
