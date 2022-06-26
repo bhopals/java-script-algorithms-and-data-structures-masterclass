@@ -31,5 +31,90 @@
 - WAYS TO TRAVERSE IN GRAPHS
   - Depth First Search (DPS) Graph Traversal Iteratively
   - Depth First Search (DPS) Graph Traversal Recursively
-  - Breadth First Search (DPS) Graph Traversal Iteratively
-  - Breadth First Search (DPS) Graph Traversal Recursively
+  - Breadth First Search (BFS) Graph Traversal Iteratively
+  - Breadth First Search (BFS) Graph Traversal Recursively
+
+#### Depth First Graph Traversal
+
+- Explore as far as possible down one Branch Before Backtracking (Top to Bottom)
+- What it really means is just following the neighbours and contunuing to follow neighbours
+  before backtracking.
+
+#### Depth First Search (DFS) Recursive Intro
+
+- DFS (Recursive Search) Logic
+
+  - DFS(Vertex):
+    - IF Vertex is EMPTY
+      - return (this is BASE CASE - To end Recursive CALL) // BASE CASE
+    - ELSE
+      - Add Vertex to RESULTs LIST
+      - Mark Vertex as Visited
+      - FOR EACH neighbour in VERTEX Neighbors:
+      - IF Neighbor is not Visited:
+        - RECURSIVELY call DFS on Neighbor // DIFFERENT INPUT
+
+- VISITING THINGS (To Keep track of What is already visited)
+
+  ```
+      {
+          "A": true,
+          "B": true,
+          "C": true
+      }
+  ```
+
+- EXAMPLE
+
+  - GRAPH
+    (A Representation of the Graph.)
+
+    ```
+          A
+        /   \
+       B     C
+       |     |
+       D --- E
+        \   /
+          F
+    ```
+
+- ADJACENCY LIST
+
+```
+  {
+   "A": ["B", "C"],
+   "B": ["A", "D"],
+   "C": ["A", "E"],
+   "D": ["B", "E", "F"],
+   "E": ["C", "D", "F"],
+   "F": ["D", "E"]
+  }
+```
+
+- VISITED LIST
+
+  ```
+  {
+      "A": true,
+      "B": true,
+      "C": true,
+      "D": true,
+      "E": true,
+      "F": true
+  }
+  ```
+
+- DEPTH FIRST TRAVERSAL (Recursive)
+  - The function should accept a STARTING NODE
+  - Create a List (RESULT ARRAY) to Store the End result, to be returned at the very end.
+  - Create an Object to store Visited Vertices
+  - Create a Helper Function which accepts a VERTEX
+    - The Helper function should return early if the VERTEX is EMPTY
+    - The Helper function should place the VERTEX it accepts into the visited object
+      and push that VERTEX into the result array.
+    - Loop over all of the values in the adjacencyList for that vertex.
+    - If any of those values have not been visited, recursively invoke the HELPER
+      function with that vertex.
+  - Invoke the helper Function with the starting VERTEX.
+  - Return the RESULT Array.
