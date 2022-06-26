@@ -22,3 +22,18 @@
 
   - In other words, A GRAPH is a collection of Nodes and Connection between those Nodes.
   - A Graph is consists of NODES + CONNECTIONS
+
+#### Uses for Graphs
+
+- Real world Applications Examples (Graph Usage)
+  - Social Network
+  - Location / Mapping - (Google Map Path Finding)
+  - Routing Algorithms
+  - Visual Hierarchy (Web page Site Map)
+  - File System Optimizations
+  - Recommendations on Sites
+    - People also watched
+    - You might also like
+    - People you might know
+    - Frequently bought together
+  - EVERYWHERE!
