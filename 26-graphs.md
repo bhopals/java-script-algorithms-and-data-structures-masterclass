@@ -165,3 +165,47 @@
         F: ["E", "A"]
       }
       ```
+
+#### Adjacency List v/s Adjacency Matrix BIG O
+
+- Sparse Graph
+
+  - A SPARSE GRAPH in which the number of edges is much less than the possible number of edges
+
+- Dense graph
+
+  - A DENSE GRAPH is a graph in which the number of edges is close to the maximal number of edges.
+  - OR in other words if every pair of vertices is connected by one edge
+
+- |V| - number of vertices
+- |E| - number of edges
+
+- OPERATION - ADJACENCY LIST v/s ADJACENCY MATRIX
+
+  - Add Vertex: `O(1)` - `O(|V^2|)`
+  - Add Edge: `O(1)` - `O(1)`
+  - Remove Vertex: `O(|V| + |E|)` - `O(|V^2|)`
+  - Remove Vertex: `O(|E|)` - `O(1)`
+  - Query: `O(|V| + |E|)` - `O(1)`
+  - Storage: `O(|V| + |E|)` - `O(|V^2|)`
+
+- ADJACENCY LIST
+
+  - Can take up less space (in Sparse Graph)
+  - Faster to iterate over all edges
+
+  - Can be slower to lookup specific edge
+
+- ADJACENCY MATRIX
+
+  - Take up more space (in Sparse Graph)
+  - Slower to iterate over all edges
+
+  - Faster to lookup specific edge
+
+- WHAT WILL YOU SHOULD USE
+  - Adjacency List
+  - WHY?
+    - Because most data in the real-world tends to lend itself to Sparse
+    - More Nodes but no all are well connected (Sparse Graph)
+    - Hence, in terms of SPACE or PERFORMANCE, Adjacency List is the OPTIMAL CHOICE.
