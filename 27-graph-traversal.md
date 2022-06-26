@@ -40,7 +40,7 @@
 - What it really means is just following the neighbours and contunuing to follow neighbours
   before backtracking.
 
-#### Depth First Search (DFS) Recursive Intro
+#### Depth First Search (DFS) Recursive
 
 - DFS (Recursive Search) Logic
 
@@ -152,3 +152,31 @@
             return result;
         }
     ```
+
+#### Depth First Search (DFS) Iterative
+
+- DFS ITERATIVE PSEUDOCODE
+
+  - DFS-iterative(start):
+    - let S be a stack
+    - S.push(start)
+    - WHILE S is not EMPTY
+      - vertex = S.pop()
+      - IF Vertex is not labeled as discovered:
+        - VISIT Vertex (add to RESULT LIST)
+        - LABEL Vertex as DISCOVERED / VISITED
+        - FOR EACH of Vertex's Neighbors, and DO S.push(Neighbour)
+
+- DEPTH FIRST TRAVERSAL Iterative (More Detailed PSEUDOCODE)
+  - The function should accept a STARTING NODE
+  - Create a STACK to help use keep track of VERTICES (Use a LIST/ARRAY)
+  - Create a List to store the end RESULT (Array), to be returned at the very end
+  - Create an Object to STORE Visited Vertices
+  - Add the Starting Vertex to the Stack and Mark it Visited.
+  - While the STACK has something in it:
+    - POP the next Vertex from the STACK
+    - If that Vertex hasn't been visited yet:
+      - Mark it as Visited
+      - Add it to the result list
+      - Push all of its neighbours into the stack
+  - Retrun the RESULT Array
