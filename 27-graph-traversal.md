@@ -168,6 +168,7 @@
         - FOR EACH of Vertex's Neighbors, and DO S.push(Neighbour)
 
 - DEPTH FIRST TRAVERSAL Iterative (More Detailed PSEUDOCODE)
+
   - The function should accept a STARTING NODE
   - Create a STACK to help use keep track of VERTICES (Use a LIST/ARRAY)
   - Create a List to store the end RESULT (Array), to be returned at the very end
@@ -180,3 +181,26 @@
       - Add it to the result list
       - Push all of its neighbours into the stack
   - Retrun the RESULT Array
+
+- DEPTH FIRST TRAVERSAL Iterative Code
+
+  ```
+  depthFirstIterativeImproved(start) {
+    const stack = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+    visited[start] = true;
+    while (stack.length) {
+        currentVertex = stack.pop();
+        result.push(currentVertex);
+        this.adjacencyList[currentVertex].forEach((neighbor) => {
+            if (!visited[neighbor]) {
+                visited[neighbor] = true;
+                stack.push(neighbor);
+            }
+        });
+    }
+    return result;
+  }
+  ```
