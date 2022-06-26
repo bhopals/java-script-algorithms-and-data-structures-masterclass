@@ -271,3 +271,33 @@
     this.adjacencyList[v2].push(v1);
   }
 ```
+
+#### Remove Edge
+
+- REMOVING AN EDGE
+
+- REMOVE EDGE Psuedocode
+
+  - This function should accept two Vertices, we will call them `Vertex1` and `Vertex2`
+  - The function should reassign the key of the `Vertex1` to be an ARRAY that does not contain `Vertex2`
+  - The function should reassign the key of the `Vertex2` to be an ARRAY that does not contain `Vertex1`
+  - Do not worry about handling errors/invalid vertices
+
+- EXAMPLE
+
+  - A Graph: { Tokyo:['Dallas'], Dallas:['Tokyo', 'Aspen'], Aspen: ['Dallas']};
+
+  - graph.removeEdge('Tokyo', 'Dallas')
+  - { Tokyo:[], Dallas:['Aspen'], Aspen: ['Dallas']};
+
+- REMOVE EDGE
+
+```
+ removeEdge(v1, v2) {
+    // You could add error handling or conditions if Vertex Exists or not
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter((v) => v !== v2);
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1);
+  }
+```
+
+#### Remove Vertex
