@@ -210,7 +210,7 @@
     - More Nodes but no all are well connected (Sparse Graph)
     - Hence, in terms of SPACE or PERFORMANCE, Adjacency List is the OPTIMAL CHOICE.
 
-#### Adjaceny List: Add Vertex Intro
+#### Adjaceny List: Add Vertex
 
 - Our Graph Class (Undirected Graph)
 
@@ -238,3 +238,36 @@
     if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
   }
   ```
+
+#### Adjaceny List: Add Edge
+
+- ADDING AN EDGE
+
+  - Drawing the connection between two vertices
+
+- ADD EDGE Psuedocode
+
+  - This Function should accept two Vertices, We can call them `Vertex1` and `Vertex2`
+  - The function should find in the Adjacency List the key of the `Vertex1` and Push `Vertex2` to the ARRAY
+  - The function should find in the Adjacency List the key of the `Vertex2` and Push `Vertex1` to the ARRAY
+  - Do not worry about handling errors/invalid vertices
+
+- EXAMPLE
+
+  - A Graph: { Tokyo:[], Dallas:[], Aspen: []};
+
+  - graph.addEdge('Tokyo', 'Dallas');
+  - { Tokyo:['Dallas'], Dallas:['Tokyo'], Aspen: []};
+
+  - graph.addEdge('Dallas', 'Aspen');
+  - { Tokyo:['Dallas'], Dallas:['Tokyo', 'Aspen'], Aspen: ['Dallas']};
+
+- ADD EDGE Code
+
+```
+  addEdge(v1, v2) {
+    // You could add error handling or conditions if Vertex Exists or not
+    this.adjacencyList[v1].push(v2);
+    this.adjacencyList[v2].push(v1);
+  }
+```
