@@ -301,3 +301,50 @@
 ```
 
 #### Remove Vertex
+
+- REMOVING A VERTEX
+
+- REMOVE VERTEX Psuedocode
+
+  - The function should accept a vertex to remove
+  - The function should loop as long as there is any other vertices in the adjacencyList for that VERTEX
+  - Inside the loop, call our `removeEdge` function with the vertex we are removing and any
+    values in the adjacencyList for that vertex.
+  - Lastly, DELETE the key in the Adjacency List for the VERTEX.
+
+- REMOVING A VERTEX Example
+
+  - A Graph:
+
+    ```
+        {
+        'Tokyo':['Dallas', 'Hong Kong'],
+        'Dallas':['Tokyo', 'Aspen', 'Hong Kong', 'Los Angeles'],
+        'Aspen': ['Dallas'],
+        'Hong Kong': ['Tokyo', 'Dallas', 'Los Angeles'],
+        'Los Angeles': ['Hong Kong', 'Dallas']
+        };
+    ```
+
+    - graph.removeVertex('Hong Kong')
+
+    ```
+        {
+        'Tokyo':['Dallas'],
+        'Dallas':['Tokyo', 'Aspen', 'Los Angeles'],
+        'Aspen': ['Dallas'],
+        'Los Angeles': ['Dallas']
+        };
+    ```
+
+- REMOVE VERTEX Code
+  ```
+  removeVertex(vertex) {
+    // You could add error handling or conditions if Vertex Exists or not
+    while (this.adjacencyList[vertex].lenght) {
+      const adjacentVertex = this.adjacencyList[vertex].pop();
+      this.removeEdge(vertex, adjacentVertex);
+    }
+    delete this.adjacencyList[vertex];
+  }
+  ```
