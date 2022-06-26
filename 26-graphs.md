@@ -209,3 +209,32 @@
     - Because most data in the real-world tends to lend itself to Sparse
     - More Nodes but no all are well connected (Sparse Graph)
     - Hence, in terms of SPACE or PERFORMANCE, Adjacency List is the OPTIMAL CHOICE.
+
+#### Adjaceny List: Add Vertex Intro
+
+- Our Graph Class (Undirected Graph)
+
+  ```
+      class Graph {
+          constructor() {
+              this.adjacencyList = {}
+          }
+      }
+  ```
+
+- ADDING A VERTEX Psuedocode
+
+  - Write a method called `addVertex`, which accepts a number of vertex
+  - It should add a key to the adjacency list with the name of the vertex and set its value to be an EMPTY ARRAY
+  - Example
+    `graph.addVertex('Tokyo')` ==> `{ 'Tokyo': []}`
+
+- ADDING A VERTEX Code
+  ```
+  addVertex(vertex) {
+    // Not handling addition of duplicate vertices
+    // Technically, you should throw an error stating that `VERTEX with the give name already exists`
+    // In our case, we are not gonna throw any error, we would only create/add a vertex, if it does not exist
+    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
+  }
+  ```
