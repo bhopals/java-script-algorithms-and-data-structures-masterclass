@@ -243,7 +243,6 @@
       const queue = [start];
       const result = [];
       const visited = {};
-
       visited[start] = true;
       while (queue.length) {
       const currentVertex = queue.shift();
@@ -268,7 +267,6 @@
           const queue = [start];
           const result = [];
           const visited = {};
-
           visited[start] = true;
           while (queue.length) {
           const currentVertex = queue.shift();
