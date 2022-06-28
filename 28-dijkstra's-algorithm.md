@@ -70,3 +70,23 @@
   ```
 
 #### Walking through the Dijkstra Algorithm
+
+- WEIGHTED GRAPH EXAMPLE
+
+  ```
+        A
+     2/    \4
+     B      B
+    2|      |3
+     C-2-D---E
+     4\ 1| 1/
+        F
+  ```
+
+- THE APPROACH (Psuedocode)
+  - Every time we look to visit a new node, we pick the node with the SMALLEST known distance to visit first.
+  - Once we have moved to the node we are going to visit, we look at each of its neighbors.
+  - For each neighboring node, we calculate the distance summing the total edges that lead to the node
+    we are checking from the starting node.
+  - If the new total distance to a node is less than the previous total, we store the new shorter distance
+    for that node.

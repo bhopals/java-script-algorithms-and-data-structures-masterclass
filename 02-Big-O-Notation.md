@@ -64,7 +64,7 @@
 - If not Time, then What?
 
   - Rather than counting seconds, which are so variable...
-  - Let's countthe number of simple operations the computer has to Perform!
+  - Let's count the number of simple operations the computer has to Perform!
 
   - 3 SIMPLE Operations (Multiply, Addition, Division), regardless of the size of `n`
 
@@ -101,8 +101,8 @@
 
 - BIG O DEFINITION
 
-  - We say that an algorithm is `O(f(n))` if the number of simple operations the computer has to do it eventually less
-    than a constant times `f(n)`, as `n` increases.
+  - We say that an algorithm is `O(f(n))` if the number of simple operations the computer has to do it
+    eventually less than a constant times `f(n)`, as `n` increases.
   - `f(n)` could be LINEAR `(f(n)=n)` ==> `O(n)`
   - `f(n)` could be QUADRATIC `(f(n)=n2)` ==> `O(n2)`
     - `O(n)` operation inside of an `O(n)` operation (NESTED LOOP) ==> `O(n*n)` ==> `O(n2)` ==> O n square
@@ -211,7 +211,7 @@
 
 - What is Logarithm
 
-  - Logarithm is the INVERSE of Exponentiation. Log2N, Log3N
+  - Logarithm is the INVERSE of Exponentiation - `Log2N`, `Log3N`
   - The Logarithm of a number roughly measures the number of times you can divide that number by 2
     before you get a value that is less than or equal to one.
 

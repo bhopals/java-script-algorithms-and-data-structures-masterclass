@@ -52,16 +52,16 @@
       - It is becuase the Array requires the reindexing when you REMOVE an element in the BEGINNING or MIDDLE of the ARRAY
       - PUSH and POP are always Faster then SHIFT and UNSHIFT
 
-  - SEARCHING - O(N)
-  - ACCESS - O(1)
+  - SEARCHING - `O(N)`
+  - ACCESS - `O(1)`
 
 - BIG O of ARRAY METHODS
-  - push - O(1) - because no reindexing involves when you add the element at the end of array
-  - pop - O(1) - because no reindexing involves when you remove the element at the end of the array
-  - shift - O(N)
-  - unshift- O(N)
-  - concat - O(N)
-  - slice - O(N)
-  - splice - O(N)
-  - sort - O(N \* log N)
-  - forEach/map/filter/reduce/etc. - O(N)
+  - push - `O(1)` - because no reindexing involves when you add the element at the end of array
+  - pop - `O(1)` - because no reindexing involves when you remove the element at the end of the array
+  - shift - `O(N)`
+  - unshift- `O(N)`
+  - concat - `O(N)`
+  - slice - `O(N)`
+  - splice - `O(N)`
+  - sort - `O(N log N)`
+  - forEach/map/filter/reduce/etc. - `O(N)`
