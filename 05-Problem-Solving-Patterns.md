@@ -21,8 +21,9 @@
 - AN EXAMPLE
 - QUESTION
 
-  - Write a function called `same`, which accepts two arrays. The function should return true if every value in the
-    array has it's correcponding values squared in the second array. The frequency of values must be the same.
+  - Write a function called `same`, which accepts two arrays. The function should return true
+    if every value in the array has it's correcponding values squared in the second array.
+    The frequency of values must be the same.
 
     ```
     same([1,2,3], [4, 1, 9]) // true
@@ -70,7 +71,7 @@
    console.log("frequencyCounter1:", frequencyCounter1); // {1:1, 2:2, 3:1, 5:1}
    console.log("frequencyCounter2:", frequencyCounter2); // {1:1, 4:2, 9:1, 11:1}
    for (let key in frequencyCounter1) {
-       // If there is any KEY in frequencyCounter2 with KEY*2
+       // If there is no KEY in frequencyCounter2 with KEY*2
        if (!(key * 2 in frequencyCounter2)) {
        return false;
        }
@@ -158,8 +159,9 @@
 - EXAMPLE
 
   - QUESTION:
-  - Write a function called `sumZero` which accepts a sorted array of integers. The function should find the first pair where
-    the SUM is ZERO (0). Return an array that includes both values that SUM to ZERO or UNDFINED if a pair does not exist.
+  - Write a function called `sumZero` which accepts a sorted array of integers. The function should
+    find the first pair where the SUM is ZERO (0). Return an array that includes both values
+    that SUM to ZERO or UNDEFINED if a pair does not exist.
 
     ```
      sumZero([-3, -2, -1, 0, 1, 2, 3]) // undefined
@@ -212,8 +214,8 @@
 
 #### MULTIPLE POINTERS: Count Unique Values Challange
 
-- Implement a function called countUniqueValues, which accept a sorted array, and counts the unique values in the array.
-  There can be negative numbers in the array, but it will always be sorted.
+- Implement a function called countUniqueValues, which accept a sorted array, and counts the
+  unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
   ```
    countUniqueValues([1,1,1,1,1,1,2]) // 2
