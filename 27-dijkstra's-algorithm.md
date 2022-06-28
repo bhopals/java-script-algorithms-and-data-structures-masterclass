@@ -44,3 +44,27 @@
   - Airline tickets - Finding cheapest route to your destination
   - Biology - Used to model the spread of viruses among humans
   - Many other uses!
+
+#### Writing a Weighted Graph
+
+- To store Weight(Value/Distance) in a weighted graph, we need to tweak our Graph class a little
+  so instead of just storing the Vertices Details (`{"A":["B", "C"]}`), we would store
+  vertices value as well - (`{"A":[{node: "B", weight: 25}, {node: "C", weight: 15}]}`)
+
+- WeightedGraph Example
+
+  ```
+  class WeightedGraph {
+    constructor() {
+        this.adjacencyList = {};
+    }
+    addVertex(vertex) {
+        if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
+    }
+    addEdge(vertex1, vertex2, weight) {
+        this.adjacencyList[vertex1].push({ node: vertex2, weight });
+        this.adjacencyList[vertex2].push({ node: vertex1, weight });
+    }
+  }
+
+  ```
