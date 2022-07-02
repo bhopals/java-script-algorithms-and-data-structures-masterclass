@@ -50,3 +50,12 @@
   - Fibonacci - Overlapping Subproblems
   - When we say "Overlapping Subproblems", it means when we write a solution of the problem, we
     may have some steps that are repeatedly happens
+
+#### Optimal Substructure
+
+- OPTIMAL SUBSTRUCTURE
+  - A Problem is said to have OPTIMAL SUBSTRUCTURE if an optimal solution can be constructed
+    from optimal solutions of its subproblems.
+  - Example
+    - Fibonacci Series (The one we have dicussed above)
+    - Shortest Path Algorithm
