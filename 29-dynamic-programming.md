@@ -144,3 +144,29 @@
   - After MEMOIZATION
 
     - O(N) - Linear Time Complexity
+
+#### Tabulation: A Bottom Up Approach
+
+- Memoization is a one Flavour of Dynamic Programming
+- If you have noticed, in MEMOIZATION, we have used Top Down approach
+
+- In this Section, we are going to use another Flavour - `A Bottom Up Approach`
+  - For example, start calculating Fibonacci from bottom up instead Top down
+- TABULATION
+
+  - Storing the result of a previous result in a "TABLE" (Usually an Array)
+  - Usually done using ITERATION
+  - Better Space Complexity can be achieved using Tabulation.
+
+- EXAMPLE (TABULATED VERSION OF FIBONACCI Problem)
+
+```
+function fibTable(n) {
+  if (n <= 2) return 1;
+  let fibNums = [0, 1, 1];
+  for (let i = 3; i <= n; i++) {
+    fibNumbs[i] = fibNumbs[i - 1] + fibNums[i - 2];
+  }
+  return fibNumbs[n];
+}
+```
