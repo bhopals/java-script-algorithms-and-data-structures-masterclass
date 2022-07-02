@@ -115,3 +115,21 @@
     solving each of those subproblems just once, and storing their solutions.
   - Using past knowledge to make solving a future problem easier.
   - Called MEMOIZATION.
+
+#### MEMOIZATION!
+
+- MEMOIZATION
+
+  - Storing the results of expensive function calls and returing the CACHED result when the same INPUTS
+    occur again.
+
+- A MEMO-IZED Solution of Fibonacci Problem
+  ```
+  function fib(n, memo=[]) {
+    if(meme[n] !== undefined) return memo[n];
+    if(n<=2) return 1;
+    let res = fib(n-1, memo) + fib(n-2, memo);
+    memo[n] = res;
+    return res;
+  }
+  ```
