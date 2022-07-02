@@ -26,3 +26,24 @@
   bubbleSort(data) // Too Slow
   mergeSort(data) // Faster
   ```
+
+#### Merge Sort: Introduction
+
+- MERGE SORT
+
+  - It is a combination of TWO THINGS - MERGING and SORTING.
+  - Exploits the fact that arrays of 0 or 1 elements are always sorted.
+  - Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly
+    sorted array.
+
+  - HOW DOES IT WORK?
+
+    - We SPLIT the array into smallest unit (1 element array)
+    - [8,3,5,4,7,6,1,2]
+    - [8,3,5,4] [7,6,1,2]
+    - [8,3] [5,4] [7,6] [1,2]
+    - [8] [3] [5] [4] [7] [6] [1] [2] - Split to this level
+    - Now we start the MERGE Process
+    - [3,8] [4,5] [6,7] [1,2]
+    - [3,4,5,8] [1,2,6,7]
+    - [1,2,3,4,5,6,7,8]
