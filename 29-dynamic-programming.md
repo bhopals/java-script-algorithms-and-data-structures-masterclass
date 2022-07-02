@@ -59,3 +59,19 @@
   - Example
     - Fibonacci Series (The one we have dicussed above)
     - Shortest Path Algorithm
+
+#### Writing a Recursive Solution
+
+- Lets Write it!
+
+  - Fib(n) = Fib(n-1) + Fin(n-2)
+  - Fib(2) is 1
+  - Fib(1) is 1
+
+- RECURSIVE Solution
+  ```
+    function fib(n) {
+        if(n <= 2) return 1;
+        return fib(n-1) + fib(n-2);
+    }
+  ```
