@@ -10,6 +10,9 @@
 - OVERLAPPING SUBPROBLEMS and OPTIMAL SUBSTRUCTURE are two conditions/indicators to use
   Dynamic Programming on a given problem.
 
+- A method for solving a complex problem by breaking down into a collection of simpler subproblems,
+  solving each of those subproblems just once, and storing their solutions.
+
 #### Intro to Dynamic Programming
 
 - DEFINITION
@@ -79,3 +82,36 @@
 
 - The BIG O Complexity of the above Solution
   - COMPUTATIONAL/TIME Complexity - `O(2^n)` - Quadratic - Really NOT GOOD!
+
+#### The Problem with the Above Solution
+
+- PROBLEMS
+
+  - REPITIONS: We are doing the repetion over and over again
+
+    - Example
+
+    ```
+            fib(7)
+            /       \
+        fib(6)    fib(5)
+        /    \    /    \
+    fib(5) fib(4) fib(4) fib(3)
+    ```
+
+    - We can see that while calculation fib(7)there are some duplications we are doing while doing
+      the calculation - fib(5) getting calulated more than once, same goes for fib(4), and fib(3)
+
+    - Means there are SUBPROBLEMS, and OVERLAP REPITIONS. That means Dynamic Programming can be used here.
+
+  - GROWS QUICKLY Over TIME so not a very perfomant solution
+
+- WHAT CAN WE IMPROVE
+
+  - What If we could REMEMBER OLD VALUES? - Using Dynamic Programming
+
+- DYNAMIC PROGRAMMING
+  - A method for solving a complex problem by breaking down into a collection of simpler subproblems,
+    solving each of those subproblems just once, and storing their solutions.
+  - Using past knowledge to make solving a future problem easier.
+  - Called MEMOIZATION.
