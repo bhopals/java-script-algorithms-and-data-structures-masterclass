@@ -47,3 +47,26 @@
     - [3,8] [4,5] [6,7] [1,2]
     - [3,4,5,8] [1,2,6,7]
     - [1,2,3,4,5,6,7,8]
+
+#### Merging Arrays Intro
+
+- Merge Sorted Arrays Logic
+
+- MERGING ARRAYS
+
+  - In order to implement merge sort, it is useful to first implement a function responsible
+    for merging two sorted arrays.
+  - Given two arrays which are sorted, this helper function should create a new array which is also sorted,
+    and consists of all the elements in the two input arrays.
+  - This function should run in `O(n+m)` TIME and `O(n+m)` SPACE and SHOULD NOT modify the params passed to it.
+    - Here `n` is the size of the first array
+    - Here `m` is the size of the second array
+
+- MERGING ARRAYS Pseudocode
+  - Create an Empty Array - RESULT ARRAY, take a look at the SMALLEST values in each input array
+  - While there are still values we have not looked at...
+    - If the value in the First Array is SMALLER than the value in the SECOND ARRAY, PUSH the value
+      in the FIRST ARRAY intor your RESULTS and move on the the NEXT value in the FIRST ARRAY.
+    - If the value in the First Array is LARGER than the value in the SECOND ARRAY, PUSH the value
+      in the SECOND ARRAY intor your RESULTS and move on the the NEXT value in the SECOND ARRAY.
+    - Once we exhaust one ARRAY, push in all the remaining values from the OTHER ARRAY.
