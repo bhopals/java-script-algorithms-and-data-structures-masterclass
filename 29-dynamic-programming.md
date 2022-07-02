@@ -69,9 +69,13 @@
   - Fib(1) is 1
 
 - RECURSIVE Solution
+
   ```
     function fib(n) {
         if(n <= 2) return 1;
         return fib(n-1) + fib(n-2);
     }
   ```
+
+- The BIG O Complexity of the above Solution
+  - COMPUTATIONAL/TIME Complexity - `O(2^n)` - Quadratic - Really NOT GOOD!
