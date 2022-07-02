@@ -124,6 +124,7 @@
     occur again.
 
 - A MEMO-IZED Solution of Fibonacci Problem
+
   ```
   function fib(n, memo=[]) {
     if(meme[n] !== undefined) return memo[n];
@@ -133,3 +134,13 @@
     return res;
   }
   ```
+
+  #### Time Complexity of Memoized Solution
+
+  - Before MEMOIZATION
+
+    - The Complexity of Fibonacci Problem was - `O(2^n)` - Quadratic Computation/Time Complexity
+
+  - After MEMOIZATION
+
+    - O(N) - Linear Time Complexity
