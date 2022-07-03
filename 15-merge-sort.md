@@ -141,3 +141,13 @@ function mergeSort(arr) {
 const merged = mergeSortA([10, 24, 76, 73, 72, 1, 9]);
 console.log(merged); // [1, 9, 10, 24, 72, 73, 76]
 ```
+
+#### Merge Sort BIG O Complexity
+
+- COMPUTATION / TIME COMPLEXITY
+
+  - BEST - `O(n log n)`
+  - AVERAGE - `O(n log n)`
+  - WORST - `O(n log n)`
+
+- SPACE COMPLEXITY - `O(N)`
