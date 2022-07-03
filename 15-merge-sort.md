@@ -122,7 +122,22 @@
 #### Writing Merge Sort
 
 - MERGE SORT Pseudocode (Sorting)
+
   - Break up the array into halves until you have arrays that are empty or have one element
   - Once you have smaller Sorted Arrays, merge those arrays with other sorted arrays until you are
     back at the full length of the array.
   - Once the array has been merged back together, return the merged (and SORTED!) array.
+
+- MERGE SORT Code (Sorting)
+
+```
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return mergeArrays(left, right);
+}
+const merged = mergeSortA([10, 24, 76, 73, 72, 1, 9]);
+console.log(merged); // [1, 9, 10, 24, 72, 73, 76]
+```
