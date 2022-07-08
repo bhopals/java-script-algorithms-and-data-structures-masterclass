@@ -244,7 +244,7 @@ insert(value) {
         - If there is NOT, we are DONE searching!
 
 - FIND Code
-- If Found return the NODe
+- If found return the node
 
 ```
   /*** Find to Return the NODE once Matched */
@@ -270,7 +270,7 @@ find(value) {
 
 ```
 
-- If Found return TRUE, else FALSE
+- If found return TRUE, else FALSE
 
 ```
 /*** Find to Return the TRUE once Matched */
