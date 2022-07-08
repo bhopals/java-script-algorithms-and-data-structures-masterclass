@@ -22,9 +22,9 @@
   - For example, try out BUBBLE SORT on an array of 100,000 elements, it will take quite some time!
 
   ```
-  let data = Array.apply(null, { length: 1000000}).map(Function.call, Math.random);
+  let data = Array.apply(null, { length: 100000}).map(Function.call, Math.random);
   bubbleSort(data) // Too Slow
-  mergeSort(data) // Faster
+  mergeSort(data) // Faster than others
   ```
 
 #### Merge Sort: Introduction
