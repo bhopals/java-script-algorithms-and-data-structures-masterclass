@@ -2,7 +2,7 @@
 
 - OBJECTIVES
 
-  - Define what a tree is
+  - Define what a tree is?
   - Compare and contrast trees and lists
   - Explain the differences between Trees, Binary Trees, and binary search trees (BST)
   - Implement operations on Binary Search Trees (BST)
