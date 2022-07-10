@@ -9,7 +9,7 @@
 
 - FASTER SORTS
 
-  - BUBBLE/INSERT/SELECTION Sort ==> MERGE/QUICK/RADIX sort
+  - BUBBLE/INSERT/SELECTION Sort ==> MERGE/QUICK/RADIX SORT
   - There is a family of Sorting Algorithms that can improve time complexity from `O(n2)` to `O(n log n)`
 
 - WHY LEARN THIS?
