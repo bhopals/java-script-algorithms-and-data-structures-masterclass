@@ -1,14 +1,14 @@
-#### Big O
+### Big O
 
-- TIme Complexity
+#### TIme Complexity
 
-  - O (Big O) - It describes an upper bound on the time (Worst Case Performance)
+- O (Big O) - It describes an upper bound on the time (Worst Case Performance)
 
-    - Big O Notation is used to describe `asymptotic upper bound`.
+  - Big O Notation is used to describe `asymptotic upper bound`.
 
-  - Ω (Big Omega) - It describes a lower bound on the time (Best Case Performance)
+- Ω (Big Omega) - It describes a lower bound on the time (Best Case Performance)
 
-  - Θ (Big Theta) - It gives tight bound on runtime
+- Θ (Big Theta) - It gives tight bound on runtime
 
 - DIFFERENCE
 
@@ -60,10 +60,42 @@ Big Oh (O) Big Omega (Ω) Big Theta (Θ)
   - Best/Worst/Expected case describes the BIG O (or Big Theta) time for particular inputs or scenarios
   - Big O, Big Omega, and Big Theta describes the UPPER, LOWER, and TIGHT bounds for the Runtime.
 
-- Space Complexity
+#### Space Complexity
+
+- Time is not the only thing that matters in an algorithm. We might also care about
+  the amount of MEMORY and SPACE.
+- Space Complexity is a parallel concept to time complexity.
+
+- DROP CONSTANTS
+
+  - We usually drop constants in RUNTIME to calculate Time/Space complexity
+  - Example
+    - O(5n) === O(n)
+    - O(25n) === O(n)
+
+- DROP the Non-Dominant Terms
+
+  - Example
+    - O(n2 + n2 + n + n) === O(n2)
+    - O(n5 + n5 + n4 + n4 + n2 + n + n) === O(n5)
+
+- Log N Runtimes
+
+  - When you see a problem where the number of elements in the Problem space gets halved each time,
+    that will likely be a O(log N) runtime.
+  - Example - Binary Search
+
+- Recursive Runtimes
+
+  - When you have recursive function that makes multipel calls, the runtime will often look like
+    `O(brances * depth)`
+  - Example - Recursions
+
+- To know the time complexity of an algorithm we always consider worst case
 
 - KEYWORDS
   - Asympotic upper bound / lower bound
   - Three ways to describe RUNTIME (Best, Worst, Expected Case)
   - Best/Worst/Expected case describes the BIG O (or Big Theta) time for particular inputs or scenarios
   - Big O, Big Omega, and Big Theta describes the UPPER, LOWER, and TIGHT bounds for the Runtime.
+  - Order of growth will be constant/linear
