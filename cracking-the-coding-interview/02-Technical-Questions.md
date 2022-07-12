@@ -76,3 +76,31 @@
 - With Base Case and Build, we solve the problem first for a BASE CASE (e.g. n = 1) and then
   try to build up from there.
 - When we get more complex/interseting cases (e.g. n =3, or n = 4)
+
+#### Optimizing and Solve Technique #5: Data Strictire Brainstorm
+
+- Think about the potential Data Structure that we could use
+
+  - Linked List? / Map / Tree / Stack / Queue / Hash Map / Heap / Or any other ...
+
+- The more problems you do, the more developed your instinct on which data structure to apply will be.
+- You also develop a more finely tuned instinct as to which of these approaches is the most useful.
+
+#### Best Conceivable Runtime (BCR)
+
+- Considering the Best Conceivable Runtime can offer a useful hint for some problem.
+- The BEST Conceivable runtime is, literrally, the best runtime your could concieve of a solution to a problem
+  having. You can easily prove that there is no way you could beat the BCR.
+
+- For Example, suppose you want to compute the number of elements that two arrays (of length A and B)
+  have in common. You immediately know that you cannot do better than O(A+B) time because you have to
+  touch each element in each array O(A+B) is the BEST CONCEIVABLE RUNTIME (BCR)
+
+- OR Suppose, you want to compute all the number of values within an Array. You know you cannot do that
+  in better O(N2) time because you have to touch there are N2 Pairs to print.
+
+- Most Likely, we are driving towards an `O(N)` algorithm or an` O(N LOG N)` algorithm.
+- If we imagine our current algorithm runtime as `O(N*N)`, then getting to `O(N)` or `O(N LOG N)`
+  might mean reducing that second `O(N)` in the equation to `O(1)` or `O(LOG N)`
+
+- This is one way that BCR can be useful. We can use the runtimes to get a "HINT" for what we need to REDUCE.
