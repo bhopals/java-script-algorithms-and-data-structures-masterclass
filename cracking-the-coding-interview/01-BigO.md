@@ -88,7 +88,7 @@ Big Oh (O) Big Omega (Ω) Big Theta (Θ)
 - Recursive Runtimes
 
   - When you have recursive function that makes multipel calls, the runtime will often look like
-    `O(brances * depth)`
+    `O(branches * depth)`
   - Example - Recursions
 
 - To know the time complexity of an algorithm we always consider worst case
