@@ -57,3 +57,22 @@
 - 3. Duplicated Work
   - Find the part that contains the duplicate work, and move that to a separate function
     Or something we could do in the same Iteration
+
+#### Optimizing and Solve Technique #2: DIY (Do It Yourself)
+
+- When you get a quetion, try just working it through intuitevely on a real example.
+- Think for a moment about how you would solve this problem.
+
+#### Optimizing and Solve Technique #3: Simplify and Generalize
+
+- With Simplify and Generalize, we implement a multi-step approach.
+  - First, we simplify or tweak some constraint, such as data type
+  - Then, we solve this new simplified version of the problem
+  - Finally, once we have an algorithm for the simplified problem, we try to adopt it for the more
+    complex version.
+
+#### Optimizing and Solve Technique #4: Base Case and Build
+
+- With Base Case and Build, we solve the problem first for a BASE CASE (e.g. n = 1) and then
+  try to build up from there.
+- When we get more complex/interseting cases (e.g. n =3, or n = 4)
