@@ -104,3 +104,25 @@
   might mean reducing that second `O(N)` in the equation to `O(1)` or `O(LOG N)`
 
 - This is one way that BCR can be useful. We can use the runtimes to get a "HINT" for what we need to REDUCE.
+
+#### What Good Coding Looks Like
+
+- Broadly speaking, good code has the following properties:
+
+  - Correct
+  - Efficient
+  - Simple
+  - Readable
+  - Maintainable
+
+- Apart from that, few more points to keep that in MIND
+  - Use Data Structure Generously (The BEST FIT ONE)
+  - Appropriate Code Reuse
+  - Modular
+  - Flexible and Robust
+  - Error checking
+
+#### Don't Give Up!
+
+- Always show the eagerness to step up and Solve the Problem.
+- Show excitement about solving hard problems. Embrace it!!!
