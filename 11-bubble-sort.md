@@ -6,7 +6,7 @@
 
   - Sorting is the process of rearranging the items in a collection (e.g. an array) so that the items are in some kind of order.
   - EXAMPLES
-    - Sorting numbers from smallest to largest
+    - Sorting numbers from smallest to the largest
     - Sorting names alphabetically
     - Sorting movies based on revenue/rating/release year
 
